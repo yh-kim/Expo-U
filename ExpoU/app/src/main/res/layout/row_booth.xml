@@ -1,0 +1,134 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="170dp"
+    android:layout_height="238dp"
+    android:paddingLeft="5dp"
+    android:paddingTop="7dp">
+
+    <LinearLayout
+        android:id="@+id/row_booth_layout"
+        android:layout_width="170dp"
+        android:layout_height="238dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/booth_box"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_marginTop="1dp"
+            android:id="@+id/img_Booth"
+            android:layout_width="156dp"
+            android:layout_height="158dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/booth_img"
+            />
+
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/txt_booth_title"
+            android:layout_width="156dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="슈에무라"
+            android:textColor="#343231"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/txt_booth_explain"
+            android:layout_width="156dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="test"
+            android:textColor="#818181"
+            android:textSize="10sp"
+            android:layout_marginBottom="9dp"
+            android:lineSpacingExtra="8sp"
+            android:ellipsize="end"
+            android:maxLines="3"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="170dp"
+        android:layout_height="18dp"
+        android:src="@drawable/tag"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/row_booth_layout"
+        android:layout_alignEnd="@+id/row_booth_layout" />
+
+    <LinearLayout
+        android:layout_width="170dp"
+        android:layout_height="18dp"
+        android:weightSum="3"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/row_booth_layout"
+        android:layout_alignEnd="@+id/row_booth_layout">
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dp"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/hit" />
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:id="@+id/txt_booth_hit"
+            android:textColor="#eeeeee"
+            android:textSize="30px"
+            android:layout_marginLeft="6dp"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="9527" />
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_width="1dp"
+            android:layout_height="12dp"
+            android:src="@drawable/tag_line" />
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dp"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/love" />
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dp"
+            android:id="@+id/txt_booth_love_hit"
+            android:textColor="#eeeeee"
+            android:textSize="30px"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="6581" />
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_width="1dp"
+            android:layout_height="12dp"
+            android:src="@drawable/tag_line" />
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dp"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/expo_small" />
+
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dp"
+            android:id="@+id/txt_booth_expo_hit"
+            android:textColor="#eeeeee"
+            android:textSize="30px"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="12" />
+
+    </LinearLayout>
+
+</RelativeLayout>

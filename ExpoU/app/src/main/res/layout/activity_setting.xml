@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#1a1a1a">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/activity_back"
+            android:id="@+id/setting_back"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginLeft="116dp"
+            >
+
+        <ImageView
+            android:layout_marginTop="1dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/menu_setting"/>
+
+        <TextView
+            android:layout_marginLeft="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#ced2d3"
+            android:text="설정" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="265dp"
+        android:background="@drawable/my_box"
+
+        android:layout_marginRight="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="7dp"
+        >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="265dp"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="53dp"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="푸쉬알람"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_gravity="center_vertical"/>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="46dp"
+                    android:layout_height="28dp"
+
+                    android:layout_marginTop="13dp"
+                    android:layout_marginRight="6dp"
+                    android:background="@drawable/off"
+                    />
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/line"
+                />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="53dp"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="고객센터"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_gravity="center_vertical"/>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="11dp"
+
+                        android:layout_marginTop="21dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/arrow"
+                        />
+                    </LinearLayout>
+            </LinearLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/line"
+                />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="53dp"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="개인정보설정"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_gravity="center_vertical"/>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="11dp"
+
+                        android:layout_marginTop="21dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/arrow"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/line"
+                />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="53dp"
+                android:orientation="horizontal"
+                android:id="@+id/logout_layout"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="로그아웃"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_gravity="center_vertical"/>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="11dp"
+
+                        android:layout_marginTop="21dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/arrow"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/line"
+                />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="53dp"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="버전1.0.0"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_gravity="center_vertical"/>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="11dp"
+
+                        android:layout_marginTop="21dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/arrow"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,163 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="346dp"
+    android:layout_height="150dp"
+    android:paddingLeft="7dp"
+    android:paddingTop="7dp">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="346dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:id="@+id/row_market_layout"
+        android:background="@drawable/market_box">
+
+        <LinearLayout
+            android:layout_width="167dp"
+            android:layout_height="138dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginBottom="6dp"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/img_content"
+                android:layout_width="167dp"
+                android:layout_height="138dp"
+                android:src="@drawable/content_img"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="196dp"
+            android:layout_marginTop="30dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="6dp"
+            android:orientation="vertical" >
+
+
+            <TextView
+                android:id="@+id/txt_market_name"
+                android:textSize="12sp"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:text="[이벤트] 내추럴 젖병 느린 260ml X 2p"
+                android:textColor="#343231" />
+
+            <TextView
+                android:layout_marginTop="36dp"
+                android:id="@+id/txt_market_price"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:textColor="#818181"
+                android:text="정상가 : 30000원"
+                android:textSize="11sp"/>
+
+            <TextView
+                android:layout_marginTop="6dp"
+                android:id="@+id/txt_market_discount"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:textColor="#61c19c"
+                android:text="할인가 : 18000원"
+                android:textSize="11sp"/>
+
+            <TextView
+                android:layout_marginTop="13dp"
+                android:id="@+id/txt_market_date"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:textColor="#818181"
+                android:text="2015.07.23(목) ~ 2015.07.26(일)"
+                android:textSize="10sp"/>
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    <ImageView
+        android:layout_width="346dp"
+        android:layout_height="18dp"
+        android:src="@drawable/tag2"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/row_market_layout"
+        android:layout_alignEnd="@+id/row_market_layout" />
+
+
+    <LinearLayout
+        android:layout_width="346dp"
+        android:layout_height="18dp"
+        android:orientation="horizontal"
+        android:id="@+id/row_market_sublayout">
+
+        <TextView
+            android:id="@+id/txt_market_title"
+            android:textColor="#eeeeee"
+            android:textSize="10sp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="대전 베이비페어" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="115dp"
+        android:layout_height="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_width="1dp"
+            android:layout_height="12dp"
+            android:src="@drawable/tag_line" />
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dp"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/hit" />
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:id="@+id/txt_market_hit"
+            android:textColor="#eeeeee"
+            android:textSize="30px"
+            android:layout_marginLeft="6dp"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:text="14207" />
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_width="1dp"
+            android:layout_height="12dp"
+            android:src="@drawable/tag_line" />
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dp"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/love" />
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dp"
+            android:id="@+id/txt_market_love_hit"
+            android:textColor="#eeeeee"
+            android:textSize="30px"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:text="11278" />
+
+
+    </LinearLayout>
+</RelativeLayout>

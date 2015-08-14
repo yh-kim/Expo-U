@@ -1,0 +1,147 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="346dp"
+    android:layout_height="100dp"
+    android:paddingLeft="7dp"
+    android:paddingTop="7dp">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="346dp"
+    android:layout_height="100dp"
+    android:layout_gravity="center_horizontal"
+    android:orientation="horizontal"
+    android:id="@+id/row_content_layout"
+    android:background="@drawable/contents_box">
+
+    <LinearLayout
+        android:layout_width="111dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginBottom="6dp"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/img_content"
+            android:layout_width="111dp"
+            android:layout_height="88dp"
+            android:src="@drawable/content_img"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="223dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="6dp"
+        android:orientation="vertical" >
+
+
+            <TextView
+                android:layout_marginTop="24dp"
+                android:id="@+id/txt_name"
+                android:textSize="12sp"
+                android:layout_width="223dp"
+                android:layout_height="wrap_content"
+                android:text="제목"
+                android:textColor="#343231" />
+
+
+        <TextView
+            android:layout_marginTop="6dp"
+            android:id="@+id/txt_content"
+            android:layout_width="223dp"
+            android:layout_height="wrap_content"
+            android:textColor="#818181"
+            android:text="내용"
+            android:textSize="10sp"
+            android:lineSpacingExtra="8sp"
+            android:ellipsize="end"
+            android:maxLines="3" />
+    </LinearLayout>
+
+
+
+</LinearLayout>
+    <ImageView
+        android:layout_width="346dp"
+        android:layout_height="18dp"
+        android:src="@drawable/tag2"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/row_content_layout"
+        android:layout_alignEnd="@+id/row_content_layout" />
+
+
+<LinearLayout
+    android:layout_width="346dp"
+    android:layout_height="18dp"
+    android:orientation="horizontal"
+    android:id="@+id/row_content_sublayout">
+
+    <TextView
+        android:id="@+id/txt_content_title"
+        android:textColor="#eeeeee"
+        android:textSize="10sp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="World IT Show 2015" />
+
+
+</LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="115dp"
+        android:layout_height="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_width="1dp"
+            android:layout_height="12dp"
+            android:src="@drawable/tag_line" />
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dp"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/hit" />
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:id="@+id/txt_content_hit"
+            android:textColor="#eeeeee"
+            android:textSize="30px"
+            android:layout_marginLeft="6dp"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:text="14207" />
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_width="1dp"
+            android:layout_height="12dp"
+            android:src="@drawable/tag_line" />
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dp"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/love" />
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dp"
+            android:id="@+id/txt_content_love_hit"
+            android:textColor="#eeeeee"
+            android:textSize="30px"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:text="11278" />
+
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,86 @@
+<LinearLayout
+    android:id="@+id/drawer_view"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="240dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="start"
+    android:background="@drawable/menu_box"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Your drawer content -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:id="@+id/imageView99" />
+
+
+    <LinearLayout
+        android:layout_width="240dp"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="right"
+        android:src="@drawable/menu_close"
+        android:id="@+id/menu_close" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <com.pkmmte.view.CircularImageView
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/menu_my"
+            app:border="true"
+            app:border_color="#7dc6a8"
+            app:border_width="5dp"
+            app:shadow="true"
+            android:id="@+id/circulr_img"
+            android:layout_alignParentLeft="true" />
+
+   </RelativeLayout>
+
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="96dp"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="김유빈"
+        android:textColor="#ced2d3"
+        android:id="@+id/tv_drawer_name" />
+
+        <ImageView
+            android:id="@+id/menu_line"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:src="@drawable/menu_line"
+            />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/menu_list" />
+
+
+
+    </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

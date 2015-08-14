@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/expo_frame">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee">
+
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="5dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="208dp"
+            android:layout_height="28dp"
+            android:background="#ffffff"
+            android:layout_marginLeft="7dp">
+
+        <Spinner
+            android:background="@null"
+            android:layout_width="208dp"
+            android:layout_height="28dp"
+            android:id="@+id/spin_expo_category"
+            android:layout_gravity="right"
+            />
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="7dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="7dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/spinner_arrow" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="131dp"
+            android:layout_height="28dp"
+            android:background="#ffffff"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp">
+        <Spinner
+            android:background="@null"
+            android:layout_width="131dp"
+            android:layout_height="28dp"
+            android:id="@+id/spin_expo_sort" />
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="7dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="7dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/spinner_arrow" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/line3" />
+
+    <GridView
+        android:listSelector="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gv_expo"
+        android:layout_gravity="center_horizontal"
+        android:numColumns="2"
+        android:layout_marginBottom="7dp"
+        />
+</LinearLayout>
+</FrameLayout>

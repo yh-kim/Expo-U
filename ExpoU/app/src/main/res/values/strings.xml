@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">ExpoU</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string-array name="expo_cate">
+        <item >전체</item>
+        <item >1번</item>
+        <item >2번</item>
+        <item >3번</item>
+        <item >4번</item>
+    </string-array>
+
+    <string-array name="expo_sort">
+        <item >인기순</item>
+        <item >1번</item>
+        <item >2번</item>
+        <item >3번</item>
+        <item >4번</item>
+    </string-array>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+</resources>

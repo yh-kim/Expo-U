@@ -1,0 +1,120 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="170dp"
+    android:layout_height="252dp"
+    android:paddingLeft="5dp"
+    android:paddingTop="7dp">
+
+    <LinearLayout
+        android:id="@+id/row_booth_layout"
+        android:layout_width="170dp"
+        android:layout_height="252dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/expo_box"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_marginTop="1dp"
+            android:id="@+id/img_Expo"
+            android:layout_width="156dp"
+            android:layout_height="223dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/poster"
+/>
+
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/txt_expo_Explain"
+            android:layout_width="156dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="2015 내나라 여행박람회"
+            android:textColor="#343231"
+            android:textSize="36px" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="170dp"
+        android:layout_height="18dp"
+        android:src="@drawable/tag"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/row_booth_layout"
+        android:layout_alignEnd="@+id/row_booth_layout" />
+
+    <LinearLayout
+        android:layout_width="170dp"
+        android:layout_height="18dp"
+        android:weightSum="3"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/row_booth_layout"
+        android:layout_alignEnd="@+id/row_booth_layout">
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dp"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/hit" />
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:id="@+id/txt_expo_hit"
+            android:textColor="#eeeeee"
+            android:textSize="30px"
+            android:layout_marginLeft="6dp"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="8547" />
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_width="1dp"
+            android:layout_height="12dp"
+            android:src="@drawable/tag_line" />
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dp"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/love" />
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dp"
+            android:id="@+id/txt_expo_love_hit"
+            android:textColor="#eeeeee"
+            android:textSize="30px"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="7412" />
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_width="1dp"
+            android:layout_height="12dp"
+            android:src="@drawable/tag_line" />
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dp"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/booth_small" />
+
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dp"
+            android:id="@+id/txt_expo_booth_hit"
+            android:textColor="#eeeeee"
+            android:textSize="30px"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="123" />
+
+    </LinearLayout>
+
+</RelativeLayout>
