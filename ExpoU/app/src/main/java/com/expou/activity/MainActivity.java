@@ -18,10 +18,15 @@ import android.widget.TextView;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.expou.R;
-import com.expou.SampleFragmentPagerAdapter;
-import com.expou.adapter.MenuAdapter;
+import com.expou.menu.search.SearchActivity;
+import com.expou.util.ExpoFragmentPagerAdapter;
+import com.expou.menu.MenuAdapter;
 import com.expou.exception.ServiceException;
-import com.expou.item.MenuListItem;
+import com.expou.menu.MenuListItem;
+import com.expou.menu.mybooth.MyBoothActivity;
+import com.expou.menu.myinfo.MyInfoActivity;
+import com.expou.menu.notice.NoticeActivity;
+import com.expou.menu.setting.SettingActivity;
 import com.expou.serverconnect.dao.ServiceDAOImpl;
 import com.expou.util.BackPressCloseHandler;
 import com.expou.util.BaseActivity;
@@ -138,7 +143,7 @@ public class MainActivity extends ActionBarActivity {
 
     private void initTab(){
         pager = (ViewPager) this.findViewById(R.id.pager);
-        pager.setAdapter(new SampleFragmentPagerAdapter(getSupportFragmentManager()));
+        pager.setAdapter(new ExpoFragmentPagerAdapter(getSupportFragmentManager()));
 
         /* 큰아이콘 탭
         */

@@ -11,8 +11,10 @@ import com.parse.ParseACL;
  */
 public class ParseApplication extends Application {
 
-    private static final String APPLICATION_ID = "UGdXkZQyXBy5hJBIjoDMIRUTty9SJB2Etj04hzah";
-    private static final String CLIENT_KEY = "ZGEp3T0BWadiSnm2d0P2mfrAYLkc2ZvqJy4FJdQ6";
+//    private static final String APPLICATION_ID = "UGdXkZQyXBy5hJBIjoDMIRUTty9SJB2Etj04hzah";
+//    private static final String CLIENT_KEY = "ZGEp3T0BWadiSnm2d0P2mfrAYLkc2ZvqJy4FJdQ6";
+    private static final String APPLICATION_ID = "tn9d02bCQ4bzBg0rIWdck4335XFmzv3rROCXyRZI";
+    private static final String CLIENT_KEY = "5BLewJqbqY7EttsOC04r2MgQnLGoYtFM0QqHzOWg";
 
     @Override
     public void onCreate() {

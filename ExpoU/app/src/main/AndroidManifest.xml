@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.SearchActivity">
+        <activity android:name=".menu.search.SearchActivity">
 
         </activity>
 
@@ -33,19 +33,19 @@
 
         </activity>
 
-        <activity android:name=".activity.NoticeActivity">
+        <activity android:name=".menu.notice.NoticeActivity">
 
         </activity>
 
-        <activity android:name=".activity.SettingActivity">
+        <activity android:name=".menu.setting.SettingActivity">
 
         </activity>
 
-        <activity android:name=".activity.MyBoothActivity">
+        <activity android:name=".menu.mybooth.MyBoothActivity">
 
         </activity>
 
-        <activity android:name=".activity.MyInfoActivity">
+        <activity android:name=".menu.myinfo.MyInfoActivity">
 
         </activity>
 
