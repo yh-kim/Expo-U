@@ -1,5 +1,7 @@
 package com.expou.serverconnect.dao;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.appcompat.BuildConfig;
 
 import com.expou.exception.ServiceException;
@@ -25,6 +27,7 @@ public class ServiceDAOImpl implements ServiceDAO{
     static ArrayList<BoothItem> BoothItems = new ArrayList<>();
     static ArrayList<ExpoItem> ExpoItems = new ArrayList<>();
     static ArrayList<MarketItem> MarketItems = new ArrayList<>();
+
     @Override
     public ArrayList<ContentItem> getContent() throws ServiceException {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("c_Contents");
@@ -43,8 +46,20 @@ public class ServiceDAOImpl implements ServiceDAO{
                 }
                 ConItems.clear();
 
+
                 for (ParseObject obj : list) {
-                    ConItems.add(new ContentItem(obj.get("contents_name").toString(), obj.get("contents_name").toString(), obj.get("contents_clickNum").toString(), obj.get("contents_clickNum").toString()));
+                    ContentItem conValue = new ContentItem(obj.get("contents_name").toString(), obj.get("contents_name").toString(), obj.get("contents_clickNum").toString(), obj.get("contents_clickNum").toString());
+
+                    //이미지 받아오는 부분
+                    Bitmap bitmap = null;
+                    try {
+                        bitmap = BitmapFactory.decodeByteArray(obj.getParseFile("contents_img").getData(), 0, obj.getParseFile("contents_img").getData().length);
+                    } catch (ParseException e1) {
+                        e1.printStackTrace();
+                    }
+                    conValue.setImg(bitmap);
+
+                    ConItems.add(conValue);
                 }
             }
         });

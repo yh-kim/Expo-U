@@ -58,7 +58,7 @@ public class ContentAdapter extends ArrayAdapter<ContentItem> {
 
         ContentItem item = getItem(position);
 
-        holder.img.setImageResource(R.drawable.content_img);
+        holder.img.setImageBitmap(item.getImg());
         holder.txt_name.setText(item.getName());
         holder.txt_content.setText(item.getText());
 

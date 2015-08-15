@@ -1,12 +1,14 @@
 package com.expou.tab.t4content;
 
+import android.graphics.Bitmap;
+
 /**
  * Created by Kim on 2015-07-19.
  */
 public class ContentItem {
     private String name;
     private String text;
-    private String img;
+    private Bitmap img;
 
     private String objectId;
     private int position;
@@ -38,11 +40,11 @@ public class ContentItem {
         this.text = text;
     }
 
-    public String getImg() {
+    public Bitmap getImg() {
         return img;
     }
 
-    public void setImg(String img) {
+    public void setImg(Bitmap img) {
         this.img = img;
     }
 
