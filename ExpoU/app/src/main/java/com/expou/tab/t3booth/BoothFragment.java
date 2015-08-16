@@ -1,6 +1,7 @@
 package com.expou.tab.t3booth;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.expou.R;
+import com.expou.YoutubeTest;
 
 import java.util.ArrayList;
 
@@ -27,6 +29,8 @@ public class BoothFragment extends Fragment {
 
     //Adapter 생성
     BoothAdapter adapter;
+
+    static Activity rootActivity;
 
     GridView gridview;
     Spinner spin_booth_category, spin_booth_sort;
@@ -51,6 +55,8 @@ public class BoothFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_booth,container,false);
+
+        rootActivity = this.getActivity();
 
         //스피너
         initSpinner();
@@ -80,6 +86,9 @@ public class BoothFragment extends Fragment {
 
                 //클릭된 아이템의 위치를 이용하여 데이터인 문자열을 Toast로 출력
                 Toast.makeText(rootView.getContext(), arr_list.get(position).getTxtTitle(), Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(rootActivity,YoutubeTest.class);
+                startActivity(intent);
 
 
             }

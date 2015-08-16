@@ -25,7 +25,7 @@
                 android:fontFamily="SandTg / Regular"
                 android:textColor="#1A1A1A"
                 android:textSize="18sp" />
-r
+
             <TextView
                 android:id="@+id/content_date"
             android:layout_width="match_parent"
