@@ -10,6 +10,7 @@
         android:background="#1a1a1a">
 
         <ImageView
+            android:layout_marginTop="2dp"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:src="@drawable/activity_back"

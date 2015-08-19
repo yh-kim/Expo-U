@@ -3,18 +3,17 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="fill_parent"
         android:layout_height="40dp"
         android:background="#1a1a1a">
 
         <ImageView
-            android:layout_marginTop="2dp"
             android:layout_width="36dp"
             android:layout_height="36dp"
+            android:layout_marginTop="2dp"
             android:src="@drawable/activity_back"
-            android:id="@+id/notice_back"/>
+            android:id="@+id/content_detail_back"/>
 
         <LinearLayout
             android:orientation="horizontal"
@@ -22,32 +21,33 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:layout_marginLeft="116dp"
             >
 
-        <ImageView
-            android:layout_marginTop="1dp"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@drawable/menu_alarm"/>
-
-        <TextView
-            android:layout_marginLeft="4dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="#ced2d3"
-            android:text="알림" />
 
         </LinearLayout>
 
-    </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="248dp"
+            android:textSize="16sp"
+            android:textColor="#ced2d3"
+            android:text="컨텐츠 이름"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:id="@+id/content_detail_title"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
 
+    </RelativeLayout>
 
-
-
-    <ListView
+<!--
+        -->
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/content_youtube"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listView" />
+        android:layout_marginBottom="30dp" />
+
+
 </LinearLayout>

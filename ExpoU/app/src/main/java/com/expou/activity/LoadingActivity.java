@@ -18,6 +18,8 @@ import java.util.TimerTask;
 public class LoadingActivity  extends Activity {
     private long splashDelay = 1000;
 
+
+
     //onCreate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,10 @@ public class LoadingActivity  extends Activity {
 
             @Override
             public void run() {
+
+
+
+
                 //register값이 저장되있는 회원이 있나 파일에서가져옴
                 String register = DataUtil.getAppPreferences(getApplicationContext(), "user_email");
 

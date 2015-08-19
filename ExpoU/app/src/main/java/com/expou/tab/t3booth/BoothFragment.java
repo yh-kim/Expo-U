@@ -11,10 +11,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.expou.R;
-import com.expou.YoutubeTest;
 
 import java.util.ArrayList;
 
@@ -30,7 +28,6 @@ public class BoothFragment extends Fragment {
     //Adapter 생성
     BoothAdapter adapter;
 
-    static Activity rootActivity;
 
     GridView gridview;
     Spinner spin_booth_category, spin_booth_sort;
@@ -56,7 +53,6 @@ public class BoothFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_booth,container,false);
 
-        rootActivity = this.getActivity();
 
         //스피너
         initSpinner();
@@ -84,11 +80,10 @@ public class BoothFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //(GridView객체, 클릭된 아이템 뷰, 클릭된 아이템의 위치, 클릭된 아이템의 아이디 - 특별한 설정이 없으면 position과 같은값)
 
-                //클릭된 아이템의 위치를 이용하여 데이터인 문자열을 Toast로 출력
-                Toast.makeText(rootView.getContext(), arr_list.get(position).getTxtTitle(), Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(rootActivity,YoutubeTest.class);
+                //페이지 보여주기
+                Intent intent = new Intent(rootView.getContext(),BoothDetailActivity.class);
                 startActivity(intent);
+                getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
 
             }

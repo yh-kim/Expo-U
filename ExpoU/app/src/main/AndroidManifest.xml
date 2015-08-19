@@ -53,9 +53,17 @@
 
         </activity>
 
-        <activity android:name=".YoutubeTest">
+
+        <activity android:name=".tab.t4content.ContentDetailActivity">
 
         </activity>
+        <activity android:name=".tab.t2expo.ExpoDetailActivity">
+
+        </activity>
+        <activity android:name=".tab.t3booth.BoothDetailActivity">
+
+        </activity>
+
 
     </application>
 

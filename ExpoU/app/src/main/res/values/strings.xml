@@ -5,19 +5,25 @@
 
 
     <string-array name="expo_cate">
-        <item >전체</item>
-        <item >1번</item>
-        <item >2번</item>
-        <item >3번</item>
-        <item >4번</item>
+        <item>전체</item>
+        <item>뷰티</item>
+        <item>패션</item>
+        <item>식품/외식</item>
+        <item>생활/리빙</item>
+        <item>문화</item>
+        <item>BIZ/마케팅</item>
+        <item>IT/전자</item>
+        <item>기계/설비</item>
+        <item>스타트업</item>
+        <item>유아동/시니어</item>
+        <item>공공</item>
+        <item>기타</item>
     </string-array>
 
     <string-array name="expo_sort">
-        <item >인기순</item>
-        <item >1번</item>
-        <item >2번</item>
-        <item >3번</item>
-        <item >4번</item>
+        <item>인기순</item>
+        <item>조회순</item>
+        <item>좋아요순</item>
     </string-array>
 
     <string name="drawer_open">Open navigation drawer</string>

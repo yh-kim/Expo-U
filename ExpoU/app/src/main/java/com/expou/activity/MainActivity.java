@@ -18,19 +18,17 @@ import android.widget.TextView;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.expou.R;
-import com.expou.menu.search.SearchActivity;
-import com.expou.util.ExpoFragmentPagerAdapter;
 import com.expou.menu.MenuAdapter;
-import com.expou.exception.ServiceException;
 import com.expou.menu.MenuListItem;
 import com.expou.menu.mybooth.MyBoothActivity;
 import com.expou.menu.myinfo.MyInfoActivity;
 import com.expou.menu.notice.NoticeActivity;
+import com.expou.menu.search.SearchActivity;
 import com.expou.menu.setting.SettingActivity;
-import com.expou.serverconnect.dao.ServiceDAOImpl;
 import com.expou.util.BackPressCloseHandler;
 import com.expou.util.BaseActivity;
 import com.expou.util.DataUtil;
+import com.expou.util.ExpoFragmentPagerAdapter;
 import com.expou.util.SetFont;
 import com.pkmmte.view.CircularImageView;
 
@@ -38,7 +36,7 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends ActionBarActivity {
-    public ViewPager pager;
+    static public ViewPager pager;
     PagerSlidingTabStrip tabsStrip;
     ImageView drawerImageView,drawerclose, drawerSearch;
     MenuAdapter adapters;
@@ -76,9 +74,9 @@ public class MainActivity extends ActionBarActivity {
         drawerSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
+                Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
                 startActivity(intent);
-                overridePendingTransition(android.R.anim.slide_in_left,R.anim.slide_out_left);
+                overridePendingTransition(android.R.anim.slide_in_left, R.anim.slide_out_left);
             }
         });
 
@@ -89,11 +87,13 @@ public class MainActivity extends ActionBarActivity {
         //Toolbar 생성
         initToolbar();
 
-        //아이템가져오는거 테스트
-        parseConnect();
+
 
         //탭 생성
         initTab();
+
+        //아이템가져오는거 테스트
+        parseConnect();
 
         //Drawer 생성
         initNaviDrawer();
@@ -133,12 +133,14 @@ public class MainActivity extends ActionBarActivity {
         mToolBar.setContentInsetsAbsolute(0, 0);
     }
 
-    private void parseConnect(){
-        try {
-            new ServiceDAOImpl().getContent();
-        } catch (ServiceException e) {
-            e.printStackTrace();
-        }
+    public void parseConnect(){
+//        try {
+////            new ServiceDAOImpl().getContent();
+//            new ServiceDAOImpl().getExpo();
+//
+//        } catch (ServiceException e) {
+//            e.printStackTrace();
+//        }
     }
 
     private void initTab(){
@@ -149,6 +151,7 @@ public class MainActivity extends ActionBarActivity {
         */
         tabsStrip = (PagerSlidingTabStrip)this.findViewById(R.id.tabsStrip);
         tabsStrip.setViewPager(pager);
+
 
         tabsStrip.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -167,6 +170,7 @@ public class MainActivity extends ActionBarActivity {
 
 
         });
+
     }
 
     private void initNaviDrawer(){

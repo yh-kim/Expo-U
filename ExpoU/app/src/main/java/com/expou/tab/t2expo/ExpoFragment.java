@@ -1,6 +1,7 @@
 package com.expou.tab.t2expo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,9 +11,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.expou.R;
+import com.expou.exception.ServiceException;
+import com.expou.serverconnect.dao.ServiceDAOImpl;
 
 import java.util.ArrayList;
 
@@ -56,10 +58,8 @@ public class ExpoFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-
-
-
     }
 
     @Override
@@ -71,19 +71,30 @@ public class ExpoFragment extends Fragment {
 
         //리스트
         arr_list = new ArrayList<ExpoItem>();
-        addData();
+
+
 
         //GridView
         gridview = (GridView)rootView.findViewById(R.id.gv_expo);
 
+
         //Adapter 생성
         adapter = new ExpoAdapter(this.getActivity(), R.layout.row_expo, arr_list);
+
+
+            //서버로부터 데이터를 받아와 arr_list에 담음
+        try {
+            arr_list = new ServiceDAOImpl().getExpo();
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+
+
+        adapter.notifyDataSetChanged();
 
         //Adapter와 GirdView를 연결
         gridview.setAdapter(adapter);
 
-
-        adapter.notifyDataSetChanged();
 
         /*
         //List를 scroll 했을때 끝을 알려주어 다음 data를 받아오는 method
@@ -116,8 +127,10 @@ public class ExpoFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //(GridView객체, 클릭된 아이템 뷰, 클릭된 아이템의 위치, 클릭된 아이템의 아이디 - 특별한 설정이 없으면 position과 같은값)
 
-                //클릭된 아이템의 위치를 이용하여 데이터인 문자열을 Toast로 출력
-                Toast.makeText(rootView.getContext(), arr_list.get(position).getTxtExplain(), Toast.LENGTH_SHORT).show();
+                //페이지 보여주기
+                Intent intent = new Intent(rootView.getContext(), ExpoDetailActivity.class);
+                startActivity(intent);
+                getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
 
             }
@@ -151,18 +164,5 @@ public class ExpoFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
     }
 
-
-    public void addData(){
-//        Bitmap bmp = BitmapFactory.decodeResource(this.getResources(), R.drawable.poster);
-
-
-        arr_list.add(new ExpoItem("poster","test1"));
-        arr_list.add(new ExpoItem("poster1","test2"));
-        arr_list.add(new ExpoItem("poster2","test3"));
-        arr_list.add(new ExpoItem("poster3","test4"));
-        arr_list.add(new ExpoItem("poster3","test5"));
-        arr_list.add(new ExpoItem("poster2","test6"));
-
-    }
 
 }

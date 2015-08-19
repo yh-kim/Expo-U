@@ -1,10 +1,9 @@
 package com.expou.tab.t4content;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,6 +70,8 @@ public class ContentFragment extends Fragment {
         } catch (ServiceException e) {
             e.printStackTrace();
         }
+
+
             //GridView
             gridview = (GridView)rootView.findViewById(R.id.gv_content);
             //Adapter 생성
@@ -89,15 +90,10 @@ public class ContentFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //(GridView객체, 클릭된 아이템 뷰, 클릭된 아이템의 위치, 클릭된 아이템의 아이디 - 특별한 설정이 없으면 position과 같은값)
 
-                //클릭된 아이템의 위치를 이용하여 데이터인 문자열을 Toast로 출력
-//                Toast.makeText(rootView.getContext(), arr_list.get(position).getText(), Toast.LENGTH_SHORT).show();
-
                 //페이지 보여주기
-                FragmentManager fm = getFragmentManager();
-                FragmentTransaction transaction = fm.beginTransaction();
-                ContentDetailFragment c = new ContentDetailFragment();
-                transaction.add(R.id.content_frame, ContentDetailFragment.newInstance(position));
-                transaction.commit();
+                Intent intent = new Intent(rootView.getContext(),ContentDetailActivity.class);
+                startActivity(intent);
+                getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
             }
         });

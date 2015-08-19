@@ -1,11 +1,12 @@
-package com.expou;
+package com.expou.tab.t3booth;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Window;
-import android.view.WindowManager;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.expou.R;
 import com.expou.util.Config;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
@@ -15,9 +16,10 @@ import com.google.android.youtube.player.YouTubePlayerView;
 /**
  * Created by Kim on 2015-08-16.
  */
-public class YoutubeTest extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
+public class BoothDetailActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 
     private static final int RECOVERY_DIALOG_REQUEST = 1;
+    ImageView imgBack;
 
     // YouTube player view
     private YouTubePlayerView youTubeView;
@@ -25,16 +27,21 @@ public class YoutubeTest extends YouTubeBaseActivity implements YouTubePlayer.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setContentView(R.layout.activity_youtubetest);
+        setContentView(R.layout.activity_booth_detail);
 
-        youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
+        youTubeView = (YouTubePlayerView) findViewById(R.id.booth_youtube);
 
         // Initializing video player with developer key
         youTubeView.initialize(Config.DEVELOPER_KEY, this);
+
+        imgBack = (ImageView)findViewById(R.id.booth_detail_back);
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 
@@ -77,6 +84,12 @@ public class YoutubeTest extends YouTubeBaseActivity implements YouTubePlayer.On
     }
 
     private YouTubePlayer.Provider getYouTubePlayerProvider() {
-        return (YouTubePlayerView) findViewById(R.id.youtube_view);
+        return (YouTubePlayerView) findViewById(R.id.booth_youtube);
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 }

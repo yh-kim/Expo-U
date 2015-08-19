@@ -49,6 +49,8 @@ public class ContentAdapter extends ArrayAdapter<ContentItem> {
             holder.img = (ImageView)convertView.findViewById(R.id.img_content);
             holder.txt_name = (TextView)convertView.findViewById(R.id.txt_name);
             holder.txt_content = (TextView)convertView.findViewById(R.id.txt_content);
+            holder.txt_hit = (TextView)convertView.findViewById(R.id.txt_content_hit);
+            holder.txt_love = (TextView)convertView.findViewById(R.id.txt_content_love_hit);
 
             convertView.setTag(holder);
 
@@ -60,7 +62,9 @@ public class ContentAdapter extends ArrayAdapter<ContentItem> {
 
         holder.img.setImageBitmap(item.getImg());
         holder.txt_name.setText(item.getName());
-        holder.txt_content.setText(item.getText());
+        holder.txt_content.setText(item.getDetail());
+        holder.txt_hit.setText(item.getHit());
+        holder.txt_love.setText(item.getLove());
 
         return convertView;
 
@@ -70,5 +74,7 @@ public class ContentAdapter extends ArrayAdapter<ContentItem> {
         ImageView img;
         TextView txt_name;
         TextView txt_content;
+        TextView txt_hit;
+        TextView txt_love;
     }
 }

@@ -6,8 +6,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.expou.R;
+import com.expou.activity.MainActivity;
 import com.expou.util.SetFont;
 
 /**
@@ -16,7 +18,9 @@ import com.expou.util.SetFont;
 public class HomeFragment extends Fragment {
     View rootView;
 
-
+    TextView txt_plus_expo;
+    TextView txt_plus_booth;
+    TextView txt_plus_contents;
 
     public static Fragment newInstance() {
         Fragment fragment = new HomeFragment();
@@ -42,7 +46,29 @@ public class HomeFragment extends Fragment {
         //frgment 폰트 설정
         SetFont.setGlobalFont(rootView.getContext(), rootView);
 
+        txt_plus_expo = (TextView)rootView.findViewById(R.id.txt_plus_expo);
+        txt_plus_expo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.pager.setCurrentItem(1);
+            }
+        });
 
+        txt_plus_booth = (TextView)rootView.findViewById(R.id.txt_plus_booth);
+        txt_plus_booth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.pager.setCurrentItem(2);
+            }
+        });
+
+        txt_plus_contents = (TextView)rootView.findViewById(R.id.txt_plus_contents);
+        txt_plus_contents.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.pager.setCurrentItem(3);
+            }
+        });
 
         return rootView;
     }

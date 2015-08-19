@@ -9,19 +9,52 @@ public class ContentItem {
     private String name;
     private String text;
     private Bitmap img;
+    private String hit;
+    private String love;
 
     private String objectId;
     private int position;
     private String date;
     private String detail;
 
-    public ContentItem(){
+    public ContentItem(String objectId, String name, String detail, String hit, String love){
+        this.objectId =objectId;
+        this.name = name;
+        this.detail = detail;
+        this.hit = hit;
+        this.love = love;
     }
 
-    public ContentItem(String name, String text){
-        this.name = name;
-        this.text = text;
+    public String getObjectId() {
+        return objectId;
+    }
 
+    public void setObjectId(String objectId) {
+        this.objectId = objectId;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
+
+    public String getHit() {
+        return hit;
+    }
+
+    public void setHit(String hit) {
+        this.hit = hit;
+    }
+
+    public String getLove() {
+        return love;
+    }
+
+    public void setLove(String love) {
+        this.love = love;
     }
 
     public String getName() {
@@ -62,14 +95,6 @@ public class ContentItem {
 
     public void setPosition(int position) {
         this.position = position;
-    }
-
-    public String getDetail() {
-        return detail;
-    }
-
-    public String getDate() {
-        return date;
     }
 
 }

@@ -48,6 +48,8 @@ public class ExpoAdapter extends ArrayAdapter<ExpoItem> {
             //row에 있는 정보들을 holder로 가져옴
             holder.img = (ImageView)convertView.findViewById(R.id.img_Expo);
             holder.txtExplain = (TextView)convertView.findViewById(R.id.txt_expo_Explain);
+            holder.hit = (TextView)convertView.findViewById(R.id.txt_expo_hit);
+            holder.love = (TextView)convertView.findViewById(R.id.txt_expo_love_hit);
 
             convertView.setTag(holder);
         }
@@ -58,10 +60,10 @@ public class ExpoAdapter extends ArrayAdapter<ExpoItem> {
 
 
 
-        holder.img.setImageResource(R.drawable.poster);
-//        holder.img.setImageResource(item.imgExpo);
-        holder.txtExplain.setText(item.getTxtExplain());
-
+        holder.img.setImageBitmap(item.getImg());
+        holder.txtExplain.setText(item.getName());
+        holder.hit.setText(item.getHit());
+        holder.love.setText(item.getLove());
 
         return convertView;
 
@@ -70,5 +72,7 @@ public class ExpoAdapter extends ArrayAdapter<ExpoItem> {
     class ViewHolder {
         ImageView img;
         TextView txtExplain;
+        TextView hit;
+        TextView love;
     }
 }
