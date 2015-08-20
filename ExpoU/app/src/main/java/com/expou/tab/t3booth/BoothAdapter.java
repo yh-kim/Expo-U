@@ -49,6 +49,9 @@ public class BoothAdapter extends ArrayAdapter<BoothItem> {
             holder.img = (ImageView)convertView.findViewById(R.id.img_Booth);
             holder.txtTitle = (TextView)convertView.findViewById(R.id.txt_booth_title);
             holder.txtExplain = (TextView)convertView.findViewById(R.id.txt_booth_explain);
+            holder.hit = (TextView)convertView.findViewById(R.id.txt_booth_hit);
+            holder.love = (TextView)convertView.findViewById(R.id.txt_booth_love_hit);
+            holder.contents = (TextView)convertView.findViewById(R.id.txt_booth_expo_hit);
 
             convertView.setTag(holder);
         }
@@ -59,10 +62,12 @@ public class BoothAdapter extends ArrayAdapter<BoothItem> {
 
 
 
-        holder.img.setImageResource(R.drawable.booth_img);
+        holder.img.setImageBitmap(item.getImg());
         holder.txtTitle.setText(item.getTxtTitle());
-//        holder.img.setImageResource(item.imgExpo);
         holder.txtExplain.setText(item.getTxtExplain());
+        holder.hit.setText(item.getHit());
+        holder.love.setText(item.getLove());
+        holder.contents.setText(item.getContents());
 
 
         return convertView;
@@ -73,5 +78,8 @@ public class BoothAdapter extends ArrayAdapter<BoothItem> {
         ImageView img;
         TextView txtTitle;
         TextView txtExplain;
+        TextView hit;
+        TextView love;
+        TextView contents;
     }
 }

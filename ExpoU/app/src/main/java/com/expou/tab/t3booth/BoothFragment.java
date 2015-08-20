@@ -1,18 +1,23 @@
 package com.expou.tab.t3booth;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.Spinner;
 
 import com.expou.R;
+import com.expou.exception.ServiceException;
+import com.expou.serverconnect.dao.ServiceDAOImpl;
 
 import java.util.ArrayList;
 
@@ -20,13 +25,21 @@ import java.util.ArrayList;
  * Created by Kim on 2015-07-02.
  */
 public class BoothFragment extends Fragment {
+    static boolean serverConnect = true;
     View rootView;
+    String mTime;
+
+
+    int row_cnt = 4;
+    int count = 4;
+    int offset = 4;
+    boolean is_scroll = true;
 
     //ArrayList 생성
-    ArrayList<BoothItem> arr_list;
+    ArrayList<BoothItem> arr_list = new ArrayList<BoothItem>();
 
     //Adapter 생성
-    BoothAdapter adapter;
+    static public BoothAdapter adapter;
 
 
     GridView gridview;
@@ -42,37 +55,53 @@ public class BoothFragment extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
+        setRetainInstance(true);
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_booth,container,false);
 
-
         //스피너
         initSpinner();
 
-        //리스트
-        arr_list = new ArrayList<BoothItem>();
-        addData();
 
         //GridView
         gridview = (GridView)rootView.findViewById(R.id.gv_booth);
 
 
-        //Adapter 생성
-        adapter = new BoothAdapter(this.getActivity(), R.layout.row_booth, arr_list);
-
-        //Adapter와 GirdView를 연결
-        gridview.setAdapter(adapter);
+        new NetworkGetBooth().execute("");
 
 
-        adapter.notifyDataSetChanged();
+        gridview.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+
+                if ((firstVisibleItem + visibleItemCount) == totalItemCount) {
+                    //서버로부터 받아온 List개수를 count
+                    //지금까지 받아온 개수를 offset
+                    if (count != 0 && offset % row_cnt == 0) {
+                        if (is_scroll) {
+                            //스크롤 멈추게 하는거
+                            is_scroll = false;
+                            new NetworkGetBooth().execute("");
+                        }
+                    }
+                }
+            }
+        });
 
         //GridView의 아이템 클릭 리스너
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -81,7 +110,7 @@ public class BoothFragment extends Fragment {
                 //(GridView객체, 클릭된 아이템 뷰, 클릭된 아이템의 위치, 클릭된 아이템의 아이디 - 특별한 설정이 없으면 position과 같은값)
 
                 //페이지 보여주기
-                Intent intent = new Intent(rootView.getContext(),BoothDetailActivity.class);
+                Intent intent = new Intent(rootView.getContext(), BoothDetailActivity.class);
                 startActivity(intent);
                 getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
@@ -108,21 +137,61 @@ public class BoothFragment extends Fragment {
         spin_booth_sort.setAdapter(sort_adapter);
     }
 
-    private void addData(){
-        arr_list.add(new BoothItem("poster","슈에무라","슈에무라는 1967년 우에무라 슈가 설립한 화장품 전문 회사이자 브랜드이다. 2004년 로레알 그룹에 인수되어 현재슈에무라는 1967년 우에무라 슈가 설립한 화장품 전문 회사이자 브랜드이다."));
-        arr_list.add(new BoothItem("poster","넥슨","넥슨은 1994년 대한민국 서울에 설립된 이후 다수의 온라인 게임을 개발 및 서비스하고 있는 글로벌 게임 기업이다. 넥"));
-        arr_list.add(new BoothItem("poster","슈에무라","슈에무라는 1967년 우에무라 슈가 설립한 화장품 전문 회사이자 브랜드이다. 2004년 로레알 그룹에 인수되어 현재"));
-        arr_list.add(new BoothItem("poster","넥슨","넥슨은 1994년 대한민국 서울에 설립된 이후 다수의 온라인 게임을 개발 및 서비스하고 있는 글로벌 게임 기업이다. 넥"));
-        arr_list.add(new BoothItem("poster","슈에무라","슈에무라는 1967년 우에무라 슈가 설립한 화장품 전문 회사이자 브랜드이다. 2004년 로레알 그룹에 인수되어 현재"));
-        arr_list.add(new BoothItem("poster","넥슨","넥슨은 1994년 대한민국 서울에 설립된 이후 다수의 온라인 게임을 개발 및 서비스하고 있는 글로벌 게임 기업이다. 넥"));
-        arr_list.add(new BoothItem("poster","슈에무라","슈에무라는 1967년 우에무라 슈가 설립한 화장품 전문 회사이자 브랜드이다. 2004년 로레알 그룹에 인수되어 현재"));
-        arr_list.add(new BoothItem("poster","넥슨","넥슨은 1994년 대한민국 서울에 설립된"));
-
-
-    }
-
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
     }
+
+    private class NetworkGetBooth extends AsyncTask<String,String,Integer>{
+
+        private ProgressDialog dialog;
+        @Override
+        protected Integer doInBackground(String... params) {
+            return processing();
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            // 기다리라는 dialog 추가
+            dialog = ProgressDialog
+                    .show(rootView.getContext(), "", "잠시만 기다려주세요", true);
+        }
+
+        @Override
+        protected void onPostExecute(Integer integer) {
+            super.onPostExecute(integer);
+            dialog.cancel();
+
+            //Adapter 생성
+            adapter = new BoothAdapter(rootView.getContext(), R.layout.row_booth, arr_list);
+
+            //Adapter와 GirdView를 연결
+            gridview.setAdapter(adapter);
+
+
+            adapter.notifyDataSetChanged();
+        }
+
+        private Integer processing(){
+            try {
+                if(serverConnect){
+                    arr_list = new ServiceDAOImpl().getBooth();
+                    serverConnect = false;
+                }
+                else{
+                    arr_list = ServiceDAOImpl.BoothItems;
+                }
+                while(arr_list.size() == 0){
+                }
+            } catch (ServiceException e) {
+                e.printStackTrace();
+            }
+
+            return 0;
+        }
+    }
+
+
+
 }

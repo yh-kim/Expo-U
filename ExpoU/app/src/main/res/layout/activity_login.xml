@@ -21,12 +21,12 @@
         <LinearLayout
             android:layout_width="230dp"
             android:layout_height="96dp"
+            android:layout_marginLeft="48dp"
             android:orientation="vertical">
 
 
         <EditText
             android:layout_marginTop="1dp"
-            android:layout_marginLeft="48dp"
             android:background="@drawable/login_bar_text"
             android:layout_width="230dp"
             android:layout_height="45dp"
@@ -41,7 +41,6 @@
 
             <EditText
                 android:layout_marginTop="4dp"
-                android:layout_marginLeft="48dp"
                 android:background="@drawable/login_bar_text"
                 android:layout_width="230dp"
                 android:layout_height="45dp"

@@ -1,23 +1,18 @@
 package com.expou.tab.t3booth;
 
 
+import android.graphics.Bitmap;
+
 /**
  * Created by Kim on 2015-07-14.
  */
 public class BoothItem {
-    private String imgBooth;
+    private Bitmap img;
+    private String objectId;
     private String txtTitle,txtExplain;
+    private String hit,love,contents;
 
-    public BoothItem(){
-        imgBooth = "@drawable/booth_img";
-        txtExplain = "testExplain";
-        txtTitle = "testTitle";
-    }
-
-    public BoothItem(String imgExpo,String txtTitle, String txtExplain){
-        this.imgBooth = "@drawable/"+imgExpo;
-        this.txtExplain = txtExplain;
-        this.txtTitle = txtTitle;
+    public BoothItem() {
     }
 
     public BoothItem(String txtTitle, String txtExplain){
@@ -25,12 +20,30 @@ public class BoothItem {
         this.txtTitle = txtTitle;
     }
 
-    public String getImgBooth() {
-        return imgBooth;
+    public BoothItem(String objectId, String txtTitle, String txtExplain, String hit, String love, String contents){
+        this.objectId = objectId;
+        this.txtTitle = txtTitle;
+        this.txtExplain = txtExplain;
+        this.hit = hit;
+        this.love = love;
+        this.contents = contents;
+
     }
 
-    public void setImgBooth(String imgBooth) {
-        this.imgBooth = imgBooth;
+    public Bitmap getImg() {
+        return img;
+    }
+
+    public void setImg(Bitmap img) {
+        this.img = img;
+    }
+
+    public String getObjectId() {
+        return objectId;
+    }
+
+    public void setObjectId(String objectId) {
+        this.objectId = objectId;
     }
 
     public String getTxtTitle() {
@@ -47,5 +60,29 @@ public class BoothItem {
 
     public void setTxtExplain(String txtExplain) {
         this.txtExplain = txtExplain;
+    }
+
+    public String getHit() {
+        return hit;
+    }
+
+    public void setHit(String hit) {
+        this.hit = hit;
+    }
+
+    public String getLove() {
+        return love;
+    }
+
+    public void setLove(String love) {
+        this.love = love;
+    }
+
+    public String getContents() {
+        return contents;
+    }
+
+    public void setContents(String contents) {
+        this.contents = contents;
     }
 }

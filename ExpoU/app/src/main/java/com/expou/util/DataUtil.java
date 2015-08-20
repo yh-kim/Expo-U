@@ -23,5 +23,7 @@ public class DataUtil {
         SharedPreferences.Editor prefEditor = pref.edit();
         prefEditor.putString(key, value);
         prefEditor.commit();
+
     }
+
 }

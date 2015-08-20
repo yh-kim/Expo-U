@@ -99,8 +99,19 @@ public class LoginActivity   extends Activity {
                     return;
                 }
 
+                DataUtil.setAppPreferences(LoginActivity.this,"user_id",parseUser.getObjectId());
+                DataUtil.setAppPreferences(LoginActivity.this,"user_username",parseUser.get("username").toString());
+                if(parseUser.get("birthday") != null)
+                DataUtil.setAppPreferences(LoginActivity.this,"user_birthday",parseUser.get("birthday").toString());
+                if(parseUser.get("sex") != null)
+                DataUtil.setAppPreferences(LoginActivity.this,"user_sex",parseUser.get("sex").toString());
+                if(parseUser.get("email") != null)
+                DataUtil.setAppPreferences(LoginActivity.this,"user_email",parseUser.get("email").toString());
+                if(parseUser.get("phone") != null)
+                DataUtil.setAppPreferences(LoginActivity.this,"user_phone",parseUser.get("phone").toString());
+                if(parseUser.get("nationality") != null)
+                DataUtil.setAppPreferences(LoginActivity.this,"user_nationality",parseUser.get("nationality").toString());
 
-                DataUtil.setAppPreferences(LoginActivity.this,"user_email",user_email);
                 Intent login = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(login);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);

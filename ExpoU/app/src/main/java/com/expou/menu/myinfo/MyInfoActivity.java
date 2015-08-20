@@ -6,8 +6,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.expou.R;
+import com.expou.util.DataUtil;
 import com.expou.util.SetFont;
 
 /**
@@ -15,12 +17,29 @@ import com.expou.util.SetFont;
  */
 public class MyInfoActivity extends Activity {
     ImageView imgBack;
+    TextView myinfo_user_name,myinfo_birthday,myinfo_sex,myinfo_email,myinfo_phone,myinfo_nationality;
+
 
     //onCreate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_myinfo);
+
+        myinfo_user_name = (TextView)findViewById(R.id.myinfo_user_name);
+        myinfo_birthday = (TextView)findViewById(R.id.myinfo_birthday);
+        myinfo_sex = (TextView)findViewById(R.id.myinfo_sex);
+        myinfo_email = (TextView)findViewById(R.id.myinfo_email);
+        myinfo_phone = (TextView)findViewById(R.id.myinfo_phone);
+        myinfo_nationality = (TextView)findViewById(R.id.myinfo_nationality);
+
+        myinfo_user_name.setText(new DataUtil().getAppPreferences(getApplicationContext(), "user_username"));
+        myinfo_birthday.setText(new DataUtil().getAppPreferences(getApplicationContext(), "user_birthday"));
+        myinfo_sex.setText(new DataUtil().getAppPreferences(getApplicationContext(), "user_sex"));
+        myinfo_email.setText(new DataUtil().getAppPreferences(getApplicationContext(), "user_email"));
+        myinfo_phone.setText(new DataUtil().getAppPreferences(getApplicationContext(), "user_phone"));
+        myinfo_nationality.setText(new DataUtil().getAppPreferences(getApplicationContext(), "user_nationality"));
+
 
         imgBack = (ImageView)findViewById(R.id.myinfo_back);
         imgBack.setOnClickListener(new View.OnClickListener() {

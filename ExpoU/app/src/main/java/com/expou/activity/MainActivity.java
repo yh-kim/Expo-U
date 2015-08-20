@@ -65,9 +65,10 @@ public class MainActivity extends ActionBarActivity {
         circulr_img = (CircularImageView) findViewById(R.id.circulr_img);
 
 
-        //이름설정정
+
+        //이름설정
        tv_drawer_name = (TextView)findViewById(R.id.tv_drawer_name);
-        tv_drawer_name.setText(DataUtil.getAppPreferences(getApplicationContext(),"user_email"));
+        tv_drawer_name.setText(new DataUtil().getAppPreferences(getApplicationContext(),"user_username"));
 
 
         drawerSearch = (ImageView) findViewById(R.id.drawer_imageview_done);
@@ -134,13 +135,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void parseConnect(){
-//        try {
-////            new ServiceDAOImpl().getContent();
-//            new ServiceDAOImpl().getExpo();
-//
-//        } catch (ServiceException e) {
-//            e.printStackTrace();
-//        }
+
     }
 
     private void initTab(){

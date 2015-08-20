@@ -25,5 +25,4 @@ public interface ServiceDAO {
     /**마켓 컨텐츠를 받아오는 기능을 수행 */
     public ArrayList<MarketItem> getMarket() throws ServiceException;
 
-
 }

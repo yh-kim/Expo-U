@@ -32,12 +32,8 @@ public class LoadingActivity  extends Activity {
 
             @Override
             public void run() {
-
-
-
-
                 //register값이 저장되있는 회원이 있나 파일에서가져옴
-                String register = DataUtil.getAppPreferences(getApplicationContext(), "user_email");
+                String register = DataUtil.getAppPreferences(getApplicationContext(), "user_id");
 
                 //회원이 없을때
                 if(register.equals("")){

@@ -33,7 +33,13 @@ public class SettingActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //로그인 정보 삭제
-                DataUtil.setAppPreferences(getApplicationContext(),"user_email",null);
+                DataUtil.setAppPreferences(getApplicationContext(), "user_id", null);
+
+                DataUtil.setAppPreferences(getApplicationContext(), "user_birthday", null);
+                DataUtil.setAppPreferences(getApplicationContext(), "user_sex", null);
+                DataUtil.setAppPreferences(getApplicationContext(), "user_email", null);
+                DataUtil.setAppPreferences(getApplicationContext(), "user_phone", null);
+                DataUtil.setAppPreferences(getApplicationContext(), "user_nationality", null);
 
 
                 Intent logout = new Intent(getApplicationContext(),LoginActivity.class);

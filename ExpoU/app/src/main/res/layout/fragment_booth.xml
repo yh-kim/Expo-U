@@ -75,4 +75,12 @@
         android:layout_marginBottom="7dp"
         android:numColumns="2" />
 </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/pro_bar_booth"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
 </FrameLayout>

@@ -7,10 +7,10 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.expou.R;
+import com.expou.tab.t1home.HomeFragment;
+import com.expou.tab.t2expo.ExpoFragment;
 import com.expou.tab.t3booth.BoothFragment;
 import com.expou.tab.t4content.ContentFragment;
-import com.expou.tab.t2expo.ExpoFragment;
-import com.expou.tab.t1home.HomeFragment;
 import com.expou.tab.t5market.MarketFragment;
 
 /**
@@ -22,6 +22,7 @@ public class ExpoFragmentPagerAdapter extends FragmentPagerAdapter implements Pa
     Fragment frag =null;
     private Resources res;
     final int PAGE_COUNT = 5;
+
 
     public ExpoFragmentPagerAdapter(FragmentManager fm){
         super(fm);

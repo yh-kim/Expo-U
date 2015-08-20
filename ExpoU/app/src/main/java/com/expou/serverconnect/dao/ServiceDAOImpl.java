@@ -3,7 +3,6 @@ package com.expou.serverconnect.dao;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.appcompat.BuildConfig;
-import android.util.Log;
 
 import com.expou.exception.ServiceException;
 import com.expou.tab.t2expo.ExpoItem;
@@ -24,14 +23,16 @@ import java.util.List;
 public class ServiceDAOImpl implements ServiceDAO{
 
 
-     static ArrayList<ContentItem> ConItems = new ArrayList<>();
-     static ArrayList<BoothItem> BoothItems = new ArrayList<>();
-     static ArrayList<MarketItem> MarketItems = new ArrayList<>();
-    public static final ArrayList<ExpoItem> ExpoItems = new ArrayList<>();
+      static public ArrayList<ContentItem> ConItems = new ArrayList<>();
+      static public ArrayList<BoothItem> BoothItems = new ArrayList<>();
+      static ArrayList<MarketItem> MarketItems = new ArrayList<>();
+      static public ArrayList<ExpoItem> ExpoItems = new ArrayList<>();
 
     @Override
     public ArrayList<ContentItem> getContent() throws ServiceException {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("c_Contents");
+        query.setLimit(2);
+        query.orderByDescending("contents_name");
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> list, ParseException e) {
@@ -45,7 +46,6 @@ public class ServiceDAOImpl implements ServiceDAO{
                     new ServiceException("err");
                     return;
                 }
-                ConItems.clear();
 
 
                 for (ParseObject obj : list) {
@@ -59,9 +59,13 @@ public class ServiceDAOImpl implements ServiceDAO{
                     //이미지 받아오는 부분
                     Bitmap bitmap = null;
                     try {
-                        bitmap = BitmapFactory.decodeByteArray(obj.getParseFile("contents_img").getData(),
-                                0,
-                                obj.getParseFile("contents_img").getData().length);
+                        BitmapFactory.Options options  = new BitmapFactory.Options();
+                        options.inSampleSize = 4;
+                            bitmap = BitmapFactory.decodeByteArray(obj.getParseFile("contents_img").getData(),
+                                    0,
+                                    obj.getParseFile("contents_img").getData().length,
+                                    options);
+
                     } catch (ParseException e1) {
                         e1.printStackTrace();
                     }
@@ -77,6 +81,7 @@ public class ServiceDAOImpl implements ServiceDAO{
     @Override
     public ArrayList<BoothItem> getBooth() throws ServiceException {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("b_Booth");
+        query.setLimit(4);
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> list, ParseException e) {
@@ -90,13 +95,32 @@ public class ServiceDAOImpl implements ServiceDAO{
                     new ServiceException("err");
                     return;
                 }
-                BoothItems.clear();
 
                 for (ParseObject obj : list) {
+                    BoothItem boothValue = new BoothItem(obj.getObjectId(),
+                            obj.get("booth_name").toString(),
+                            obj.get("booth_intro").toString(),
+                            obj.get("booth_clickNum").toString(),
+                            obj.get("booth_heartNum").toString(),
+                            obj.get("booth_heartNum").toString());
 
-                    //items.add(new ContentItem(obj.get("Contents_name").toString() , obj.get("Contents_text").toString()));
-                    BoothItems.add(new BoothItem(obj.get("booth_name").toString(),
-                            obj.get("objectId").toString()));
+                    //이미지 받아오는 부분
+                    Bitmap bitmap = null;
+                    try {
+                        BitmapFactory.Options options = new BitmapFactory.Options();
+                        options.inSampleSize = 2;
+                        bitmap = BitmapFactory.decodeByteArray(obj.getParseFile("booth_logo").getData(),
+                                0,
+                                obj.getParseFile("booth_logo").getData().length,
+                                options);
+
+                    } catch (ParseException e1) {
+                        e1.printStackTrace();
+                    }
+                    boothValue.setImg(bitmap);
+
+
+                    BoothItems.add(boothValue);
 
                 }
             }
@@ -108,6 +132,7 @@ public class ServiceDAOImpl implements ServiceDAO{
     @Override
     public ArrayList<ExpoItem> getExpo() throws ServiceException {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("a_Expo");
+        query.setLimit(4);
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> list, ParseException e) {
@@ -122,7 +147,6 @@ public class ServiceDAOImpl implements ServiceDAO{
                     return;
                 }
 
-                ExpoItems.clear();
 
                 for (ParseObject obj : list) {
                     ExpoItem conValue = new ExpoItem(obj.getObjectId(),
@@ -133,23 +157,25 @@ public class ServiceDAOImpl implements ServiceDAO{
                     //이미지 받아오는 부분
                     Bitmap bitmap = null;
                     try {
+                        BitmapFactory.Options options  = new BitmapFactory.Options();
+                        options.inSampleSize = 1;
                         bitmap = BitmapFactory.decodeByteArray(obj.getParseFile("expo_poster").getData(),
                                 0,
-                                obj.getParseFile("expo_poster").getData().length);
+                                obj.getParseFile("expo_poster").getData().length,
+                                options);
                     } catch (ParseException e1) {
                         e1.printStackTrace();
                     }
                     conValue.setImg(bitmap);
 
 
-                    getExpoItems().add(conValue);
+                    ExpoItems.add(conValue);
 
                 }
             }
         });
 
-        Log.e("bingle : ", getExpoItems().size()+"..");
-        return getExpoItems();
+        return ExpoItems;
     }
 
     @Override
@@ -157,7 +183,5 @@ public class ServiceDAOImpl implements ServiceDAO{
         return null;
     }
 
-    public ArrayList<ExpoItem> getExpoItems() {
-        return ExpoItems;
-    }
+
 }
