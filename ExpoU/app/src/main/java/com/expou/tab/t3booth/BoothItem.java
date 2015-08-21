@@ -11,6 +11,7 @@ public class BoothItem {
     private String objectId;
     private String txtTitle,txtExplain;
     private String hit,love,contents;
+    private String youtubeCode;
 
     public BoothItem() {
     }
@@ -29,6 +30,7 @@ public class BoothItem {
         this.contents = contents;
 
     }
+
 
     public Bitmap getImg() {
         return img;
@@ -84,5 +86,13 @@ public class BoothItem {
 
     public void setContents(String contents) {
         this.contents = contents;
+    }
+
+    public String getYoutubeCode() {
+        return youtubeCode;
+    }
+
+    public void setYoutubeCode(String youtubeCode) {
+        this.youtubeCode = youtubeCode;
     }
 }

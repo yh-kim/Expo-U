@@ -1,39 +1,35 @@
 package com.expou.tab.t4content;
 
-import android.content.Intent;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.expou.R;
-import com.expou.util.Config;
-import com.google.android.youtube.player.YouTubeBaseActivity;
-import com.google.android.youtube.player.YouTubeInitializationResult;
-import com.google.android.youtube.player.YouTubePlayer;
-import com.google.android.youtube.player.YouTubePlayerView;
 
 /**
  * Created by Kim on 2015-08-16.
  */
-public class ContentDetailActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
-
-    private static final int RECOVERY_DIALOG_REQUEST = 1;
+public class ContentDetailActivity extends Activity {
     ImageView imgBack;
-
-    // YouTube player view
-    private YouTubePlayerView youTubeView;
+    static public TextView content_detail_title,
+            content_detail_name,
+            content_detail_clicknum,
+            content_detail_intro;
+    public static ImageView content_detail_img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_content_detail);
 
-        youTubeView = (YouTubePlayerView) findViewById(R.id.content_youtube);
+        content_detail_title = (TextView)findViewById(R.id.content_detail_title);
+        content_detail_name = (TextView)findViewById(R.id.content_detail_name);
+        content_detail_clicknum = (TextView)findViewById(R.id.content_detail_clicknum);
+        content_detail_intro = (TextView)findViewById(R.id.content_detail_intro);
 
-        // Initializing video player with developer key
-        youTubeView.initialize(Config.DEVELOPER_KEY, this);
+        content_detail_img = (ImageView)findViewById(R.id.content_detail_img);
 
         imgBack = (ImageView)findViewById(R.id.content_detail_back);
         imgBack.setOnClickListener(new View.OnClickListener() {
@@ -43,53 +39,11 @@ public class ContentDetailActivity extends YouTubeBaseActivity implements YouTub
             }
         });
 
+
+
+
     }
 
-    @Override
-    public void onInitializationSuccess(YouTubePlayer.Provider provider,
-                                        YouTubePlayer player, boolean wasRestored) {
-        if (!wasRestored) {
 
-            // loadVideo() will auto play video
-            // Use cueVideo() method, if you don't want to play it automatically
 
-//            //자동재생
-//            player.loadVideo(Config.YOUTUBE_VIDEO_CODE);
-
-            //선택재생
-            player.cueVideo(Config.YOUTUBE_VIDEO_CODE);
-
-            // Hiding player controls
-            //컨트롤 숨기기
-//            player.setPlayerStyle(YouTubePlayer.PlayerStyle.CHROMELESS);
-        }
-    }
-
-    @Override
-    public void onInitializationFailure(YouTubePlayer.Provider provider,
-                                        YouTubeInitializationResult errorReason) {
-        if (errorReason.isUserRecoverableError()) {
-            errorReason.getErrorDialog(this, RECOVERY_DIALOG_REQUEST).show();
-        } else {
-            Toast.makeText(this, "error", Toast.LENGTH_LONG).show();
-        }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == RECOVERY_DIALOG_REQUEST) {
-            // Retry initialization if user performed a recovery action
-            getYouTubePlayerProvider().initialize(Config.DEVELOPER_KEY, this);
-        }
-    }
-
-    private YouTubePlayer.Provider getYouTubePlayerProvider() {
-        return (YouTubePlayerView) findViewById(R.id.content_youtube);
-    }
-
-    @Override
-    public void finish() {
-        super.finish();
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
-    }
 }

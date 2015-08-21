@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.expou.R;
@@ -20,6 +21,12 @@ public class BoothDetailActivity extends YouTubeBaseActivity implements YouTubeP
 
     private static final int RECOVERY_DIALOG_REQUEST = 1;
     ImageView imgBack;
+    String youtubeCode;
+    public static ImageView booth_detail_img;
+    static public TextView booth_detail_title,
+            booth_detail_name,
+            booth_detail_clicknum,
+            booth_detail_intro;
 
     // YouTube player view
     private YouTubePlayerView youTubeView;
@@ -27,8 +34,17 @@ public class BoothDetailActivity extends YouTubeBaseActivity implements YouTubeP
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_booth_detail);
+
+        Intent intent = getIntent();
+        youtubeCode = intent.getExtras().getString("youtubeCode");
+
+        booth_detail_title = (TextView)findViewById(R.id.booth_detail_title);
+        booth_detail_name = (TextView)findViewById(R.id.booth_detail_name);
+        booth_detail_clicknum = (TextView)findViewById(R.id.booth_detail_clicknum);
+        booth_detail_intro = (TextView)findViewById(R.id.booth_detail_intro);
+
+        booth_detail_img = (ImageView)findViewById(R.id.booth_detail_img);
 
         youTubeView = (YouTubePlayerView) findViewById(R.id.booth_youtube);
 
@@ -54,10 +70,10 @@ public class BoothDetailActivity extends YouTubeBaseActivity implements YouTubeP
             // Use cueVideo() method, if you don't want to play it automatically
 
 //            //자동재생
-//            player.loadVideo(Config.YOUTUBE_VIDEO_CODE);
+//            player.loadVideo(Config.youtubeCode);
 
             //선택재생
-            player.cueVideo(Config.YOUTUBE_VIDEO_CODE);
+            player.cueVideo(youtubeCode);
 
             // Hiding player controls
             //컨트롤 숨기기

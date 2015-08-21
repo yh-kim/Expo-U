@@ -12,15 +12,15 @@ public class ExpoItem {
     private String hit;
     private String love;
     private String objectId;
+    private String youtubeCode;
+
 
     public ExpoItem(String objectId,String name, String hit, String love){
+        this.objectId = objectId;
         this.name = name;
         this.hit = hit;
         this.love = love;
     }
-
-
-
 
     public Bitmap getImgExpo() {
         return img;
@@ -64,5 +64,18 @@ public class ExpoItem {
 
     public String getObjectId() {
         return objectId;
+    }
+
+
+    public void setObjectId(String objectId) {
+        this.objectId = objectId;
+    }
+
+    public String getYoutubeCode() {
+        return youtubeCode;
+    }
+
+    public void setYoutubeCode(String youtubeCode) {
+        this.youtubeCode = youtubeCode;
     }
 }

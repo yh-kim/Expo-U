@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,15 +28,15 @@ import java.util.ArrayList;
 public class ContentFragment extends Fragment {
     static boolean serverConnect = true;
 
-    int row_cnt = 2;
-    int count = 2;
-    int offset = 2;
-    boolean is_scroll = true;
+    int row_cnt = 7;
+    static int count = 0;
+    static int offset = 0;
+    static boolean is_scroll = true;
     //ArrayList 생성
-    ArrayList<ContentItem> arr_list = new ArrayList<ContentItem>();
+    static public ArrayList<ContentItem> arr_list = new ArrayList<ContentItem>();
 
     //Adapter 생성
-    ContentAdapter adapter;
+    static public ContentAdapter adapter;
 
     GridView gridview;
 
@@ -73,10 +72,14 @@ public class ContentFragment extends Fragment {
         //스피너
         initSpinner();
 
+        //GridView
+        gridview = (GridView)rootView.findViewById(R.id.gv_content);
 
+        //Adapter 생성
+        adapter = new ContentAdapter(rootView.getContext(), R.layout.row_content, arr_list);
 
-            //GridView
-            gridview = (GridView)rootView.findViewById(R.id.gv_content);
+        //Adapter와 GirdView를 연결
+        gridview.setAdapter(adapter);
 
         new NetworkGetContent().execute("");
 
@@ -97,6 +100,7 @@ public class ContentFragment extends Fragment {
                         if (is_scroll) {
                             //스크롤 멈추게 하는거
                             is_scroll = false;
+                            serverConnect = true;
                             new NetworkGetContent().execute("");
                         }
                     }
@@ -109,6 +113,13 @@ public class ContentFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //(GridView객체, 클릭된 아이템 뷰, 클릭된 아이템의 위치, 클릭된 아이템의 아이디 - 특별한 설정이 없으면 position과 같은값)
+
+                try {
+                    new ServiceDAOImpl().getDetailContent(arr_list.get(position).getObjectId());
+
+                } catch (ServiceException e) {
+                    e.printStackTrace();
+                }
 
                 //페이지 보여주기
                 Intent intent = new Intent(rootView.getContext(), ContentDetailActivity.class);
@@ -158,37 +169,42 @@ public class ContentFragment extends Fragment {
                     .show(rootView.getContext(), "", "잠시만 기다려주세요", true);
         }
 
-        @Override
-        protected void onPostExecute(Integer integer) {
-            super.onPostExecute(integer);
-            dialog.cancel();
 
-            //Adapter 생성
-            adapter = new ContentAdapter(rootView.getContext(), R.layout.row_expo, arr_list);
-
-            //Adapter와 GirdView를 연결
-            gridview.setAdapter(adapter);
-
-            adapter.notifyDataSetChanged();
-        }
 
         private Integer processing(){
             try {
                 if(serverConnect){
-                arr_list = new ServiceDAOImpl().getContent();
+                arr_list = new ServiceDAOImpl().getContent(offset);
                 serverConnect = false;
+
+                while(offset != offset+ServiceDAOImpl.count2){
+                }
             }
             else{
-                arr_list = ServiceDAOImpl.ConItems;
+                arr_list = ServiceDAOImpl.contentItems;
             }
 
-                while(arr_list.size() == 0){
-                }
             } catch (ServiceException e) {
                 e.printStackTrace();
             }
 
             return 0;
+        }
+
+
+        @Override
+        protected void onPostExecute(Integer integer) {
+            super.onPostExecute(integer);
+            dialog.cancel();
+
+            // 서버에서 받아온 리스트 개수
+            count = ServiceDAOImpl.count2;
+            // 서버에서 받아온 전체 리스트 개수
+            offset = offset + count;
+            // scroll 할 수 있게함
+            is_scroll = true;
+
+            return;
         }
     }
 

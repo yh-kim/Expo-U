@@ -116,12 +116,18 @@ public class ExpoFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //(GridView객체, 클릭된 아이템 뷰, 클릭된 아이템의 위치, 클릭된 아이템의 아이디 - 특별한 설정이 없으면 position과 같은값)
-
                 //페이지 보여주기
+                try {
+                    new ServiceDAOImpl().getDetailExpo(arr_list.get(position).getObjectId());
+
+                } catch (ServiceException e) {
+                    e.printStackTrace();
+                }
+
                 Intent intent = new Intent(rootView.getContext(), ExpoDetailActivity.class);
+                intent.putExtra("youtubeCode",arr_list.get(position).getYoutubeCode());
                 startActivity(intent);
                 getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-
 
             }
         });
@@ -191,7 +197,7 @@ public class ExpoFragment extends Fragment {
                     serverConnect = false;
                 }
                 else{
-                    arr_list = ServiceDAOImpl.ExpoItems;
+                    arr_list = ServiceDAOImpl.expoItems;
                 }
 
                 while(arr_list.size() == 0){

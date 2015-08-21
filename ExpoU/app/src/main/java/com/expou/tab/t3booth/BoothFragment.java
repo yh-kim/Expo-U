@@ -27,16 +27,15 @@ import java.util.ArrayList;
 public class BoothFragment extends Fragment {
     static boolean serverConnect = true;
     View rootView;
-    String mTime;
 
 
-    int row_cnt = 4;
-    int count = 4;
-    int offset = 4;
-    boolean is_scroll = true;
+    int row_cnt = 6;
+    static int count = 0;
+    static int offset = 0;
+    static boolean is_scroll = true;
 
     //ArrayList 생성
-    ArrayList<BoothItem> arr_list = new ArrayList<BoothItem>();
+    static public ArrayList<BoothItem> arr_list = new ArrayList<BoothItem>();
 
     //Adapter 생성
     static public BoothAdapter adapter;
@@ -76,6 +75,12 @@ public class BoothFragment extends Fragment {
         //GridView
         gridview = (GridView)rootView.findViewById(R.id.gv_booth);
 
+        //Adapter 생성
+        adapter = new BoothAdapter(rootView.getContext(), R.layout.row_booth, arr_list);
+
+        //Adapter와 GirdView를 연결
+        gridview.setAdapter(adapter);
+
 
         new NetworkGetBooth().execute("");
 
@@ -96,6 +101,7 @@ public class BoothFragment extends Fragment {
                         if (is_scroll) {
                             //스크롤 멈추게 하는거
                             is_scroll = false;
+                            serverConnect = true;
                             new NetworkGetBooth().execute("");
                         }
                     }
@@ -109,8 +115,16 @@ public class BoothFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //(GridView객체, 클릭된 아이템 뷰, 클릭된 아이템의 위치, 클릭된 아이템의 아이디 - 특별한 설정이 없으면 position과 같은값)
 
+                try {
+                    new ServiceDAOImpl().getDetailBooth(arr_list.get(position).getObjectId());
+
+                } catch (ServiceException e) {
+                    e.printStackTrace();
+                }
+
                 //페이지 보여주기
                 Intent intent = new Intent(rootView.getContext(), BoothDetailActivity.class);
+                intent.putExtra("youtubeCode",arr_list.get(position).getYoutubeCode());
                 startActivity(intent);
                 getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
@@ -158,37 +172,43 @@ public class BoothFragment extends Fragment {
                     .show(rootView.getContext(), "", "잠시만 기다려주세요", true);
         }
 
-        @Override
-        protected void onPostExecute(Integer integer) {
-            super.onPostExecute(integer);
-            dialog.cancel();
 
-            //Adapter 생성
-            adapter = new BoothAdapter(rootView.getContext(), R.layout.row_booth, arr_list);
-
-            //Adapter와 GirdView를 연결
-            gridview.setAdapter(adapter);
-
-
-            adapter.notifyDataSetChanged();
-        }
 
         private Integer processing(){
             try {
                 if(serverConnect){
-                    arr_list = new ServiceDAOImpl().getBooth();
+                    arr_list = new ServiceDAOImpl().getBooth(offset);
                     serverConnect = false;
+                    while(offset != offset+ServiceDAOImpl.count1){
+                    }
+
                 }
                 else{
-                    arr_list = ServiceDAOImpl.BoothItems;
+                    arr_list = ServiceDAOImpl.boothItems;
+                    serverConnect = true;
                 }
-                while(arr_list.size() == 0){
-                }
+
             } catch (ServiceException e) {
                 e.printStackTrace();
             }
 
             return 0;
+        }
+
+
+        @Override
+        protected void onPostExecute(Integer integer) {
+            super.onPostExecute(integer);
+            dialog.cancel();
+
+            // 서버에서 받아온 리스트 개수
+            count = ServiceDAOImpl.count1;
+            // 서버에서 받아온 전체 리스트 개수
+            offset = offset + count;
+            // scroll 할 수 있게함
+            is_scroll = true;
+
+            return;
         }
     }
 

@@ -8,5 +8,5 @@ public class Config {
     public static final String DEVELOPER_KEY = "AIzaSyCaFb44zNQuDf6j1GQQHIs4lOiMcbqNbqs";
 
     // Youtube video id
-    public static final String YOUTUBE_VIDEO_CODE ="fg8vjCrZ_s8";
+    public static String youtubeCode ="fg8vjCrZ_s8";
 }

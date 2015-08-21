@@ -16,6 +16,7 @@ public class ContentItem {
     private int position;
     private String date;
     private String detail;
+    private String youtubeCode;
 
     public ContentItem(String objectId, String name, String detail, String hit, String love){
         this.objectId =objectId;
@@ -97,4 +98,11 @@ public class ContentItem {
         this.position = position;
     }
 
+    public String getYoutubeCode() {
+        return youtubeCode;
+    }
+
+    public void setYoutubeCode(String youtubeCode) {
+        this.youtubeCode = youtubeCode;
+    }
 }
