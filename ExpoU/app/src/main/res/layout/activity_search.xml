@@ -81,7 +81,7 @@
                 android:layout_marginLeft="6dp"
                 android:layout_width="300dp"
                 android:layout_height="28dp"
-                android:hint="검색"
+                android:hint="준비중입니다"
                 android:textColor="#666666"
                 android:textColorHint="#666666"
                 android:maxLines="1"

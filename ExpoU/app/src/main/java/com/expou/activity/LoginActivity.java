@@ -27,6 +27,7 @@ public class LoginActivity   extends Activity {
     EditText e_log_passwd;
     String user_email;
     String user_passwd;
+    ImageView kakao_login,facebook_login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,8 @@ public class LoginActivity   extends Activity {
 
         btnLogin = (ImageView)findViewById(R.id.btn_login);
         tvSignup = (TextView)findViewById(R.id.tv_signUp);
-
+        kakao_login = (ImageView)findViewById(R.id.kakao_login);
+        facebook_login = (ImageView)findViewById(R.id.facebook_login);
 
 
         e_log_email = (EditText)findViewById(R.id.e_log_email);
@@ -46,7 +48,21 @@ public class LoginActivity   extends Activity {
 
 
 
+        kakao_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "준비중입니다.", Toast.LENGTH_SHORT).show();
 
+            }
+        });
+
+        facebook_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "준비중입니다.", Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
