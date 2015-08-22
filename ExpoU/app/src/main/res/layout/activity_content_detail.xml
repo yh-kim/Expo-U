@@ -170,13 +170,15 @@
             </ImageView>
 
 
-            <ImageView
+            <CheckBox
                 android:id="@+id/content_detail_love"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
                 android:layout_gravity="center"
-                android:src="@drawable/expo_love"/>
+                android:button="@null"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/selectlove" />
             <TextView
                 android:id="@+id/content_detail_love_num"
                 android:text="2045"

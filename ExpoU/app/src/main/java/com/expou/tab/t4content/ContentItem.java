@@ -18,6 +18,25 @@ public class ContentItem {
     private String detail;
     private String youtubeCode;
 
+    private String expo;
+    private String booth;
+
+    public String getExpo() {
+        return expo;
+    }
+
+    public void setExpo(String expo) {
+        this.expo = expo;
+    }
+
+    public String getBooth() {
+        return booth;
+    }
+
+    public void setBooth(String booth) {
+        this.booth = booth;
+    }
+
     public ContentItem(String objectId, String name, String detail, String hit, String love){
         this.objectId =objectId;
         this.name = name;

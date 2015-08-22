@@ -106,23 +106,23 @@ public class ContentFragment extends Fragment {
                     }
                 }
             }
-        });
+            });
 
-        //GridView의 아이템 클릭 리스너
-        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //(GridView객체, 클릭된 아이템 뷰, 클릭된 아이템의 위치, 클릭된 아이템의 아이디 - 특별한 설정이 없으면 position과 같은값)
+            //GridView의 아이템 클릭 리스너
+            gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    //(GridView객체, 클릭된 아이템 뷰, 클릭된 아이템의 위치, 클릭된 아이템의 아이디 - 특별한 설정이 없으면 position과 같은값)
 
-                try {
-                    new ServiceDAOImpl().getDetailContent(arr_list.get(position).getObjectId());
+                    try {
+                        new ServiceDAOImpl().getDetailContent(arr_list.get(position).getObjectId());
 
-                } catch (ServiceException e) {
-                    e.printStackTrace();
-                }
+                    } catch (ServiceException e) {
+                        e.printStackTrace();
+                    }
 
-                //페이지 보여주기
-                Intent intent = new Intent(rootView.getContext(), ContentDetailActivity.class);
+                    //페이지 보여주기
+                    Intent intent = new Intent(rootView.getContext(), ContentDetailActivity.class);
                 startActivity(intent);
                 getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 

@@ -8,7 +8,12 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.expou.R;
+import com.expou.exception.ServiceException;
+import com.expou.serverconnect.dao.ServiceDAOImpl;
+import com.expou.tab.t4content.ContentItem;
 import com.expou.util.SetFont;
+
+import java.util.ArrayList;
 
 /**
  * Created by Kim on 2015-08-08.
@@ -16,7 +21,7 @@ import com.expou.util.SetFont;
 public class MyBoothActivity extends Activity {
 
     ImageView imgBack;
-
+    ArrayList<ContentItem> bookCon = new ArrayList<>();
     //onCreate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +38,12 @@ public class MyBoothActivity extends Activity {
 
         //TextView 폰트 지정
         SetFont.setGlobalFont(this, getWindow().getDecorView());
+
+        try {
+            bookCon = new ServiceDAOImpl().getBookMarkInCon();
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
 
     }
 

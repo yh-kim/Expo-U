@@ -51,6 +51,7 @@ public class ContentAdapter extends ArrayAdapter<ContentItem> {
             holder.txt_content = (TextView)convertView.findViewById(R.id.txt_content);
             holder.txt_hit = (TextView)convertView.findViewById(R.id.txt_content_hit);
             holder.txt_love = (TextView)convertView.findViewById(R.id.txt_content_love_hit);
+            holder.txt_content_title = (TextView)convertView.findViewById(R.id.txt_content_title);
 
             convertView.setTag(holder);
 
@@ -65,6 +66,7 @@ public class ContentAdapter extends ArrayAdapter<ContentItem> {
         holder.txt_content.setText(item.getDetail());
         holder.txt_hit.setText(item.getHit());
         holder.txt_love.setText(item.getLove());
+        holder.txt_content_title.setText(item.getExpo()+" / " + item.getBooth());
 
         return convertView;
 
@@ -76,5 +78,6 @@ public class ContentAdapter extends ArrayAdapter<ContentItem> {
         TextView txt_content;
         TextView txt_hit;
         TextView txt_love;
+        TextView txt_content_title;
     }
 }

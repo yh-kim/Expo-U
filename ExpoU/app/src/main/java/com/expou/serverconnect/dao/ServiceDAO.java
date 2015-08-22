@@ -13,6 +13,8 @@ import java.util.ArrayList;
  * Created by Kim on 2015-07-19.
  */
 public interface ServiceDAO {
+    /** 홈 컨텐츠를 받아오는 기능을 수행 */
+    public void getHome() throws ServiceException;
     /** 콘텐츠를 받아오는 기능을 수행 */
     public ArrayList<ContentItem> getContent(int offset) throws ServiceException;
 
@@ -33,4 +35,6 @@ public interface ServiceDAO {
 
     /** 세부 컨텐츠 받아오는 기능을 수행 */
     public void getDetailContent(String objectId) throws ServiceException;
+
+
 }

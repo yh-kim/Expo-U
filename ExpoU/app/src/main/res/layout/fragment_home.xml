@@ -6,8 +6,9 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
+        android:background="#e7e7e7"
         >
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,7 +43,9 @@
                 android:background="@drawable/line"
                 android:layout_marginTop="7dp"
                 />
-            <!--
+
+
+
             <HorizontalScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -50,9 +53,12 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
+
+
+                    <!-- 엑스포1 -->
                     <RelativeLayout
+                        android:layout_marginLeft="7dp"
                         android:layout_width="111dp"
                         android:layout_height="180dp"
                         android:background="@drawable/back01"
@@ -79,9 +85,8 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="12532"
                                         android:textSize="10sp"
-                                        android:id="@+id/expo_click_num"
+                                        android:id="@+id/home_expo1_hitnum"
                                         android:textColor="#ffffffff"
                                         android:layout_marginLeft="6dp"
                                         android:layout_marginTop="1dp"/>
@@ -101,8 +106,7 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="9532"
-                                        android:id="@+id/expo_heart_num"
+                                        android:id="@+id/home_expo1_lovenum"
                                         android:textSize="10sp"
                                         android:textColor="#ffffffff"
                                         android:layout_marginLeft="6dp"
@@ -110,20 +114,19 @@
                                         android:layout_marginRight="6dp"
                                         />
                                 </LinearLayout>
+
                             </RelativeLayout>
                             <ImageView
                                 android:layout_width="99dp"
                                 android:layout_height="140dp"
-                                android:background="@drawable/poster"
-                                android:id="@+id/expo_poster"
+                                android:id="@+id/home_expo1_img"
                                 android:layout_marginRight="6dp"
                                 android:layout_marginLeft="6dp"
                                 />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/expo_name"
-                                android:text="2015 헤어/뷰티 박람회"
+                                android:id="@+id/home_expo1_name"
                                 android:textSize="11sp"
                                 android:textStyle="bold"
                                 android:layout_marginLeft="6dp"
@@ -131,9 +134,254 @@
                                 android:layout_marginBottom="6dp"/>
                         </LinearLayout>
                     </RelativeLayout>
+
+
+                    <!-- 엑스포2 -->
+                    <RelativeLayout
+                        android:layout_marginLeft="7dp"
+                        android:layout_width="111dp"
+                        android:layout_height="180dp"
+                        android:background="@drawable/back01"
+                        >
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <RelativeLayout
+                                android:layout_width="110dp"
+                                android:layout_height="17dp"
+                                android:background="@drawable/tag3">
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <ImageView
+                                        android:layout_width="10dp"
+                                        android:layout_height="10dp"
+                                        android:background="@drawable/hit"
+                                        android:layout_marginLeft="6dp"
+                                        android:layout_marginTop="4dp"
+                                        />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="10sp"
+                                        android:id="@+id/home_expo2_hitnum"
+                                        android:textColor="#ffffffff"
+                                        android:layout_marginLeft="6dp"
+                                        android:layout_marginTop="1dp"/>
+                                    <ImageView
+                                        android:layout_width="1dp"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/tag_line"
+                                        android:layout_marginLeft="6dp"
+                                        />
+                                    <ImageView
+                                        android:layout_width="10sp"
+                                        android:layout_height="10sp"
+                                        android:background="@drawable/love"
+                                        android:layout_marginLeft="6dp"
+                                        android:layout_marginTop="4dp"
+                                        />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/home_expo2_lovenum"
+                                        android:textSize="10sp"
+                                        android:textColor="#ffffffff"
+                                        android:layout_marginLeft="6dp"
+                                        android:layout_marginTop="1dp"
+                                        android:layout_marginRight="6dp"
+                                        />
+                                </LinearLayout>
+
+                            </RelativeLayout>
+                            <ImageView
+                                android:layout_width="99dp"
+                                android:layout_height="140dp"
+                                android:id="@+id/home_expo2_img"
+                                android:layout_marginRight="6dp"
+                                android:layout_marginLeft="6dp"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/home_expo2_name"
+                                android:textSize="11sp"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginRight="6dp"
+                                android:layout_marginBottom="6dp"/>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+
+                    <!-- 엑스포3 -->
+                    <RelativeLayout
+                        android:layout_marginLeft="7dp"
+                        android:layout_width="111dp"
+                        android:layout_height="180dp"
+                        android:background="@drawable/back01"
+                        >
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <RelativeLayout
+                                android:layout_width="110dp"
+                                android:layout_height="17dp"
+                                android:background="@drawable/tag3">
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <ImageView
+                                        android:layout_width="10dp"
+                                        android:layout_height="10dp"
+                                        android:background="@drawable/hit"
+                                        android:layout_marginLeft="6dp"
+                                        android:layout_marginTop="4dp"
+                                        />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="10sp"
+                                        android:id="@+id/home_expo3_hitnum"
+                                        android:textColor="#ffffffff"
+                                        android:layout_marginLeft="6dp"
+                                        android:layout_marginTop="1dp"/>
+                                    <ImageView
+                                        android:layout_width="1dp"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/tag_line"
+                                        android:layout_marginLeft="6dp"
+                                        />
+                                    <ImageView
+                                        android:layout_width="10sp"
+                                        android:layout_height="10sp"
+                                        android:background="@drawable/love"
+                                        android:layout_marginLeft="6dp"
+                                        android:layout_marginTop="4dp"
+                                        />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/home_expo3_lovenum"
+                                        android:textSize="10sp"
+                                        android:textColor="#ffffffff"
+                                        android:layout_marginLeft="6dp"
+                                        android:layout_marginTop="1dp"
+                                        android:layout_marginRight="6dp"
+                                        />
+                                </LinearLayout>
+
+                            </RelativeLayout>
+                            <ImageView
+                                android:layout_width="99dp"
+                                android:layout_height="140dp"
+                                android:id="@+id/home_expo3_img"
+                                android:layout_marginRight="6dp"
+                                android:layout_marginLeft="6dp"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/home_expo3_name"
+                                android:textSize="11sp"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginRight="6dp"
+                                android:layout_marginBottom="6dp"/>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+
+
+                    <!-- 엑스포4 -->
+                    <RelativeLayout
+                        android:layout_marginLeft="7dp"
+                        android:layout_width="111dp"
+                        android:layout_height="180dp"
+                        android:layout_marginRight="7dp"
+                        android:background="@drawable/back01"
+                        >
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <RelativeLayout
+                                android:layout_width="110dp"
+                                android:layout_height="17dp"
+                                android:background="@drawable/tag3">
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <ImageView
+                                        android:layout_width="10dp"
+                                        android:layout_height="10dp"
+                                        android:background="@drawable/hit"
+                                        android:layout_marginLeft="6dp"
+                                        android:layout_marginTop="4dp"
+                                        />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="10sp"
+                                        android:id="@+id/home_expo4_hitnum"
+                                        android:textColor="#ffffffff"
+                                        android:layout_marginLeft="6dp"
+                                        android:layout_marginTop="1dp"/>
+                                    <ImageView
+                                        android:layout_width="1dp"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/tag_line"
+                                        android:layout_marginLeft="6dp"
+                                        />
+                                    <ImageView
+                                        android:layout_width="10sp"
+                                        android:layout_height="10sp"
+                                        android:background="@drawable/love"
+                                        android:layout_marginLeft="6dp"
+                                        android:layout_marginTop="4dp"
+                                        />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/home_expo4_lovenum"
+                                        android:textSize="10sp"
+                                        android:textColor="#ffffffff"
+                                        android:layout_marginLeft="6dp"
+                                        android:layout_marginTop="1dp"
+                                        android:layout_marginRight="6dp"
+                                        />
+                                </LinearLayout>
+
+                            </RelativeLayout>
+                            <ImageView
+                                android:layout_width="99dp"
+                                android:layout_height="140dp"
+                                android:id="@+id/home_expo4_img"
+                                android:layout_marginRight="6dp"
+                                android:layout_marginLeft="6dp"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/home_expo4_name"
+                                android:textSize="11sp"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginRight="6dp"
+                                android:layout_marginBottom="6dp"/>
+                        </LinearLayout>
+                    </RelativeLayout>
+
                 </LinearLayout>
+
             </HorizontalScrollView>
-            -->
+
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -152,10 +400,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="더보기  >"
+                    android:id="@+id/txt_plus_booth"
                     android:layout_marginTop="2dp"
                     android:textColor="#343231"
                     android:layout_marginLeft="252dp"
-                    android:id="@+id/txt_plus_booth"
                     android:textSize="12sp"
                     />
             </LinearLayout>
@@ -166,9 +414,90 @@
                 android:background="@drawable/line"
                 android:layout_marginTop="7dp"
                 />
-            <!--
-            <RelativeLayout
-                android:layout_marginTop="7dp"
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <!-- 부스1 -->
+            <RelativeLayout android:layout_marginLeft="7dp"
+            android:layout_width="111dp"
+            android:layout_height="123dp"
+            android:background="@drawable/back01"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <RelativeLayout
+                    android:layout_width="110dp"
+                    android:layout_height="17dp"
+                    android:background="@drawable/tag3"
+                    >
+                    <LinearLayout
+                        android:layout_width="110dp"
+                        android:layout_height="13dp"
+                        android:orientation="horizontal"
+                        >
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@drawable/hit"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginTop="4dp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="10sp"
+                            android:textColor="#ffffffff"
+                            android:id="@+id/home_booth1_hitnum"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginTop="1dp"
+                            />
+                        <ImageView
+                            android:layout_width="1dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/tag_line"
+                            android:layout_marginLeft="6dp"
+                            />
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@drawable/love"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginTop="4dp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="10sp"
+                            android:textColor="#ffffffff"
+                            android:id="@+id/home_booth1_lovenum"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginTop="1dp"
+                            />
+                    </LinearLayout>
+                </RelativeLayout>
+                <ImageView
+                    android:layout_width="99dp"
+                    android:layout_height="99dp"
+                    android:id="@+id/home_booth1_img"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+
+            <!-- 부스2 -->
+            <RelativeLayout android:layout_marginLeft="7dp"
                 android:layout_width="111dp"
                 android:layout_height="123dp"
                 android:background="@drawable/back01"
@@ -198,10 +527,9 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="18624"
                                 android:textSize="10sp"
                                 android:textColor="#ffffffff"
-                                android:id="@+id/booth_click_num"
+                                android:id="@+id/home_booth2_hitnum"
                                 android:layout_marginLeft="6dp"
                                 android:layout_marginTop="1dp"
                                 />
@@ -221,10 +549,9 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="12427"
                                 android:textSize="10sp"
                                 android:textColor="#ffffffff"
-                                android:id="@+id/booth_heart_click_num"
+                                android:id="@+id/home_booth2_lovenum"
                                 android:layout_marginLeft="6dp"
                                 android:layout_marginTop="1dp"
                                 />
@@ -233,14 +560,302 @@
                     <ImageView
                         android:layout_width="99dp"
                         android:layout_height="99dp"
-                        android:id="@+id/booth_poster"
-                        android:background="@drawable/poster"
+                        android:id="@+id/home_booth2_img"
                         android:layout_marginLeft="6dp"
                         android:layout_marginRight="6dp"
                         />
                 </LinearLayout>
             </RelativeLayout>
-                    -->
+
+
+            <!-- 부스3 -->
+            <RelativeLayout android:layout_marginLeft="7dp"
+                android:layout_width="111dp"
+                android:layout_height="123dp"
+                android:background="@drawable/back01"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <RelativeLayout
+                        android:layout_width="110dp"
+                        android:layout_height="17dp"
+                        android:background="@drawable/tag3"
+                        >
+                        <LinearLayout
+                            android:layout_width="110dp"
+                            android:layout_height="13dp"
+                            android:orientation="horizontal"
+                            >
+                            <ImageView
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:background="@drawable/hit"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="4dp"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="10sp"
+                                android:textColor="#ffffffff"
+                                android:id="@+id/home_booth3_hitnum"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="1dp"
+                                />
+                            <ImageView
+                                android:layout_width="1dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/tag_line"
+                                android:layout_marginLeft="6dp"
+                                />
+                            <ImageView
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:background="@drawable/love"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="4dp"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="10sp"
+                                android:textColor="#ffffffff"
+                                android:id="@+id/home_booth3_lovenum"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="1dp"
+                                />
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <ImageView
+                        android:layout_width="99dp"
+                        android:layout_height="99dp"
+                        android:id="@+id/home_booth3_img"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp"
+                        />
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <!-- 부스4 -->
+            <RelativeLayout android:layout_marginLeft="7dp"
+                android:layout_width="111dp"
+                android:layout_height="123dp"
+                android:background="@drawable/back01"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <RelativeLayout
+                        android:layout_width="110dp"
+                        android:layout_height="17dp"
+                        android:background="@drawable/tag3"
+                        >
+                        <LinearLayout
+                            android:layout_width="110dp"
+                            android:layout_height="13dp"
+                            android:orientation="horizontal"
+                            >
+                            <ImageView
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:background="@drawable/hit"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="4dp"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="10sp"
+                                android:textColor="#ffffffff"
+                                android:id="@+id/home_booth4_hitnum"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="1dp"
+                                />
+                            <ImageView
+                                android:layout_width="1dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/tag_line"
+                                android:layout_marginLeft="6dp"
+                                />
+                            <ImageView
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:background="@drawable/love"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="4dp"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="10sp"
+                                android:textColor="#ffffffff"
+                                android:id="@+id/home_booth4_lovenum"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="1dp"
+                                />
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <ImageView
+                        android:layout_width="99dp"
+                        android:layout_height="99dp"
+                        android:id="@+id/home_booth4_img"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp"
+                        />
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <!-- 부스5 -->
+            <RelativeLayout android:layout_marginLeft="7dp"
+                android:layout_width="111dp"
+                android:layout_height="123dp"
+                android:background="@drawable/back01"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <RelativeLayout
+                        android:layout_width="110dp"
+                        android:layout_height="17dp"
+                        android:background="@drawable/tag3"
+                        >
+                        <LinearLayout
+                            android:layout_width="110dp"
+                            android:layout_height="13dp"
+                            android:orientation="horizontal"
+                            >
+                            <ImageView
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:background="@drawable/hit"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="4dp"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="10sp"
+                                android:textColor="#ffffffff"
+                                android:id="@+id/home_booth5_hitnum"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="1dp"
+                                />
+                            <ImageView
+                                android:layout_width="1dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/tag_line"
+                                android:layout_marginLeft="6dp"
+                                />
+                            <ImageView
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:background="@drawable/love"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="4dp"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="10sp"
+                                android:textColor="#ffffffff"
+                                android:id="@+id/home_booth5_lovenum"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="1dp"
+                                />
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <ImageView
+                        android:layout_width="99dp"
+                        android:layout_height="99dp"
+                        android:id="@+id/home_booth5_img"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp"
+                        />
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <!-- 부스6 -->
+            <RelativeLayout android:layout_marginLeft="7dp"
+                android:layout_width="111dp"
+                android:layout_height="123dp"
+                android:background="@drawable/back01"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <RelativeLayout
+                        android:layout_width="110dp"
+                        android:layout_height="17dp"
+                        android:background="@drawable/tag3"
+                        >
+                        <LinearLayout
+                            android:layout_width="110dp"
+                            android:layout_height="13dp"
+                            android:orientation="horizontal"
+                            >
+                            <ImageView
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:background="@drawable/hit"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="4dp"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="10sp"
+                                android:textColor="#ffffffff"
+                                android:id="@+id/home_booth6_hitnum"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="1dp"
+                                />
+                            <ImageView
+                                android:layout_width="1dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/tag_line"
+                                android:layout_marginLeft="6dp"
+                                />
+                            <ImageView
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:background="@drawable/love"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="4dp"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="10sp"
+                                android:textColor="#ffffffff"
+                                android:id="@+id/home_booth6_lovenum"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="1dp"
+                                />
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <ImageView
+                        android:layout_width="99dp"
+                        android:layout_height="99dp"
+                        android:id="@+id/home_booth6_img"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp"
+                        />
+                </LinearLayout>
+            </RelativeLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -259,9 +874,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="더보기  >"
+                    android:id="@+id/txt_plus_contents"
                     android:layout_marginTop="2dp"
                     android:layout_marginLeft="240dp"
-                    android:id="@+id/txt_plus_contents"
                     android:textColor="#343231"
                     android:textSize="12sp"
                     />
@@ -273,12 +888,13 @@
                 android:layout_marginTop="7dp"
                 />
 
-            <!--
+
+            <!-- 컨텐츠1 -->
             <RelativeLayout
-                android:layout_width="325dp"
+                android:layout_width="346dp"
                 android:layout_height="115dp"
                 android:background="@drawable/contents_box"
-
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="7dp"
                 >
                 <LinearLayout
@@ -286,7 +902,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <RelativeLayout
-                        android:layout_width="325dp"
+                        android:layout_width="346dp"
                         android:layout_height="17dp"
 
                         android:layout_alignParentTop="true"
@@ -298,22 +914,18 @@
                             android:orientation="horizontal"
                             >
                             <TextView
-                                android:id="@+id/expo_name_01"
-                                android:text="World IT show 2015"
+                                android:id="@+id/home_content1_exponame"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-
                                 android:textSize="10sp"
                                 android:textColor="#ffffffff"
-
                                 android:layout_marginLeft="6dp"
                                 />
                             <ImageView
                                 android:layout_width="1dp"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/tag_line"
-
-                                android:layout_marginLeft="100dp"
+                                android:layout_marginLeft="150dp"
                                 android:layout_marginTop="3dp"
                                 android:layout_marginBottom="3dp"
                                 />
@@ -321,16 +933,13 @@
                                 android:layout_width="10dp"
                                 android:layout_height="10dp"
                                 android:background="@drawable/hit"
-
                                 android:layout_marginLeft="6dp"
                                 android:layout_marginTop="4dp"
                                 />
                             <TextView
-                                android:id="@+id/click_num"
-                                android:text="14207"
+                                android:id="@+id/home_content1_hitnum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-
                                 android:textColor="#ffffffff"
                                 android:textSize="10sp"
                                 android:layout_marginLeft="6dp"
@@ -339,7 +948,6 @@
                                 android:layout_width="1dp"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/tag_line"
-
                                 android:layout_marginLeft="6dp"
                                 android:layout_marginTop="3dp"
                                 android:layout_marginBottom="3dp"
@@ -353,11 +961,9 @@
                                 android:layout_marginTop="4dp"
                                 />
                             <TextView
-                                android:id="@+id/call_num"
-                                android:text="11278"
+                                android:id="@+id/home_content1_lovenum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-
                                 android:textColor="#ffffffff"
                                 android:textSize="10sp"
                                 android:layout_marginLeft="6dp"
@@ -370,11 +976,9 @@
                         android:orientation="horizontal"
                         >
                         <ImageView
-                            android:id="@+id/content_img"
-                            android:background="@drawable/sample"
+                            android:id="@+id/home_content1_img"
                             android:layout_width="111dp"
                             android:layout_height="88dp"
-
                             android:layout_marginLeft="6dp"
                             android:layout_marginBottom="6dp"
                             />
@@ -382,62 +986,375 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
                                 <TextView
-                                    android:text="["
+                                    android:id="@+id/home_content1_name"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-
-                                    android:layout_marginLeft="6dp"
-
                                     android:textSize="12sp"/>
-                                <TextView
-                                    android:id="@+id/booth_name"
-                                    android:text="삼성"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-
-                                    android:textSize="12sp"/>
-                                <TextView
-                                    android:text="]  "
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-
-                                    android:textSize="12sp"/>
-                                <TextView
-                                    android:id="@+id/content_name"
-                                    android:text="Galaxy S6 Edge"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-
-                                    android:textSize="12sp"/>
-
-                            </LinearLayout>
                             <TextView
-                                android:id="@+id/content_content"
-                                android:text="갤럭시 s6는 어쩌고 저쩌고"
+                                android:id="@+id/home_content1_intro"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-
                                 android:textSize="10sp"
-
                                 android:layout_marginLeft="8dp"
                                 android:layout_marginRight="6dp"
-                                android:layout_marginBottom="17dp"
                                 android:layout_marginTop="6dp"/>
 
                         </LinearLayout>
-
                     </LinearLayout>
-
                 </LinearLayout>
-
-
             </RelativeLayout>
-            -->
+
+
+            <!-- 컨텐츠2 -->
+            <RelativeLayout
+                android:layout_width="346dp"
+                android:layout_height="115dp"
+                android:background="@drawable/contents_box"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="7dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="346dp"
+                        android:layout_height="17dp"
+
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/tag2"
+                        >
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:id="@+id/home_content2_exponame"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="10sp"
+                                android:textColor="#ffffffff"
+                                android:layout_marginLeft="6dp"
+                                />
+                            <ImageView
+                                android:layout_width="1dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/tag_line"
+                                android:layout_marginLeft="150dp"
+                                android:layout_marginTop="3dp"
+                                android:layout_marginBottom="3dp"
+                                />
+                            <ImageView
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:background="@drawable/hit"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="4dp"
+                                />
+                            <TextView
+                                android:id="@+id/home_content2_hitnum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#ffffffff"
+                                android:textSize="10sp"
+                                android:layout_marginLeft="6dp"
+                                />
+                            <ImageView
+                                android:layout_width="1dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/tag_line"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="3dp"
+                                android:layout_marginBottom="3dp"
+                                />
+                            <ImageView
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:background="@drawable/love"
+
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="4dp"
+                                />
+                            <TextView
+                                android:id="@+id/home_content2_lovenum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#ffffffff"
+                                android:textSize="10sp"
+                                android:layout_marginLeft="6dp"
+                                />
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <ImageView
+                            android:id="@+id/home_content2_img"
+                            android:layout_width="111dp"
+                            android:layout_height="88dp"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginBottom="6dp"
+                            />
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/home_content2_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"/>
+                            <TextView
+                                android:id="@+id/home_content2_intro"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="10sp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="6dp"
+                                android:layout_marginTop="6dp"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <!-- 컨텐츠3 -->
+            <RelativeLayout
+                android:layout_width="346dp"
+                android:layout_height="115dp"
+                android:background="@drawable/contents_box"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="7dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="346dp"
+                        android:layout_height="17dp"
+
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/tag2"
+                        >
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:id="@+id/home_content3_exponame"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="10sp"
+                                android:textColor="#ffffffff"
+                                android:layout_marginLeft="6dp"
+                                />
+                            <ImageView
+                                android:layout_width="1dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/tag_line"
+                                android:layout_marginLeft="150dp"
+                                android:layout_marginTop="3dp"
+                                android:layout_marginBottom="3dp"
+                                />
+                            <ImageView
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:background="@drawable/hit"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="4dp"
+                                />
+                            <TextView
+                                android:id="@+id/home_content3_hitnum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#ffffffff"
+                                android:textSize="10sp"
+                                android:layout_marginLeft="6dp"
+                                />
+                            <ImageView
+                                android:layout_width="1dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/tag_line"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="3dp"
+                                android:layout_marginBottom="3dp"
+                                />
+                            <ImageView
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:background="@drawable/love"
+
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="4dp"
+                                />
+                            <TextView
+                                android:id="@+id/home_content3_lovenum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#ffffffff"
+                                android:textSize="10sp"
+                                android:layout_marginLeft="6dp"
+                                />
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <ImageView
+                            android:id="@+id/home_content3_img"
+                            android:layout_width="111dp"
+                            android:layout_height="88dp"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginBottom="6dp"
+                            />
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/home_content3_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"/>
+                            <TextView
+                                android:id="@+id/home_content3_intro"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="10sp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="6dp"
+                                android:layout_marginTop="6dp"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- 컨텐츠4 -->
+            <RelativeLayout
+                android:layout_width="346dp"
+                android:layout_height="115dp"
+                android:background="@drawable/contents_box"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="7dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="346dp"
+                        android:layout_height="17dp"
+
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/tag2"
+                        >
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:id="@+id/home_content4_exponame"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="10sp"
+                                android:textColor="#ffffffff"
+                                android:layout_marginLeft="6dp"
+                                />
+                            <ImageView
+                                android:layout_width="1dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/tag_line"
+                                android:layout_marginLeft="150dp"
+                                android:layout_marginTop="3dp"
+                                android:layout_marginBottom="3dp"
+                                />
+                            <ImageView
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:background="@drawable/hit"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="4dp"
+                                />
+                            <TextView
+                                android:id="@+id/home_content4_hitnum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#ffffffff"
+                                android:textSize="10sp"
+                                android:layout_marginLeft="6dp"
+                                />
+                            <ImageView
+                                android:layout_width="1dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/tag_line"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="3dp"
+                                android:layout_marginBottom="3dp"
+                                />
+                            <ImageView
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:background="@drawable/love"
+
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginTop="4dp"
+                                />
+                            <TextView
+                                android:id="@+id/home_content4_lovenum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#ffffffff"
+                                android:textSize="10sp"
+                                android:layout_marginLeft="6dp"
+                                />
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <ImageView
+                            android:id="@+id/home_content4_img"
+                            android:layout_width="111dp"
+                            android:layout_height="88dp"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginBottom="6dp"
+                            />
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/home_content4_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"/>
+                            <TextView
+                                android:id="@+id/home_content4_intro"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="10sp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="6dp"
+                                android:layout_marginTop="6dp"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
         </LinearLayout>
     </ScrollView>
-    </FrameLayout>
+</FrameLayout>
